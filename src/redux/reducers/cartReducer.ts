@@ -1,15 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IGameCard } from 'src/types/GameCard';
-
-interface ICartItem extends IGameCard {
-  amount?: number;
-}
-
-interface ICart {
-  cartItems: ICartItem[];
-  totalPrice: number;
-  totalQuantity: number;
-}
+import { ICart, ICartItem } from 'src/types/redux/cart';
+import { getTotalHandler } from './handlers/getTotalHandler';
 
 const initialState: ICart = {
   cartItems: [],
@@ -32,33 +23,29 @@ const cartReducer = createSlice({
         payloadItem.amount = 1;
         state.cartItems.push(payloadItem);
       }
+      getTotalHandler(state);
     },
     removeFromCart: (state: ICart, action: PayloadAction<{ id: number }>) => {
       const payloadId = action.payload.id;
       state.cartItems = state.cartItems.filter((item) => item.id !== payloadId);
+      getTotalHandler(state);
     },
     decreaseItemQuantity: (state: ICart, action: PayloadAction<{ id: number }>) => {
       const payloadId = action.payload.id;
       const cartItem = state.cartItems.find((item) => item.id === payloadId);
-      cartItem && cartItem.amount--;
+      cartItem &&
+        (cartItem.amount > 1
+          ? cartItem.amount--
+          : (state.cartItems = state.cartItems.filter((item) => item.id !== cartItem.id)));
+      getTotalHandler(state);
     },
     clearCart: (state: ICart) => {
       state.cartItems = [];
+      getTotalHandler(state);
     },
-    getTotals: (state: ICart) => {
-      const { totalPrice, totalQuantity } = state.cartItems.reduce(
-        (cartTotal, cartItem) => {
-          const { price, amount } = cartItem;
-          cartTotal.totalPrice += price * amount;
-          cartTotal.totalQuantity += amount;
-          return cartTotal;
-        },
-        { totalPrice: 0, totalQuantity: 0 }
-      );
-      state.totalPrice = totalPrice;
-      state.totalQuantity = totalQuantity;
-    }
+    getTotal: (state: ICart) => getTotalHandler(state)
   }
 });
 
+export const { addToCard, removeFromCart, decreaseItemQuantity, clearCart, getTotal } = cartReducer.actions;
 export default cartReducer;
