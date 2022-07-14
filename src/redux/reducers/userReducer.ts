@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { UserActions } from 'src/types/redux/actions/userActions';
 import { IUser } from 'src/types/redux/user';
 import { login, logout } from '../../services/auth.service';
@@ -9,9 +9,12 @@ const initialState = {
   user: false
 };
 
-const writeUserToLocalStorage = createAsyncThunk(UserActions.WRITE_USER_TO_LOCAL_STORAGE, (username: string) => {
-  login(user);
-});
+const writeUserToLocalStorage = createAsyncThunk(
+  UserActions.WRITE_USER_TO_LOCAL_STORAGE,
+  ({ name }: { name: string }) => {
+    login(name);
+  }
+);
 
 const deleteUserFromLocalStorage = createAsyncThunk(UserActions.DELETE_USER_FROM_LOCAL_STORAGE, () => {
   logout();

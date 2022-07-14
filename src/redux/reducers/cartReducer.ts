@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ICart, ICartItem } from 'src/types/redux/cart';
 import { getTotalHandler } from './handlers/getTotalHandler';
+import { removeFromCartHandler } from './handlers/removeFromCartHandler';
 
 const initialState: ICart = {
   cartItems: [],
@@ -26,8 +27,7 @@ const cartReducer = createSlice({
       getTotalHandler(state);
     },
     removeFromCart: (state: ICart, action: PayloadAction<{ id: number }>) => {
-      const payloadId = action.payload.id;
-      state.cartItems = state.cartItems.filter((item) => item.id !== payloadId);
+      removeFromCartHandler(state, action);
       getTotalHandler(state);
     },
     decreaseItemQuantity: (state: ICart, action: PayloadAction<{ id: number }>) => {

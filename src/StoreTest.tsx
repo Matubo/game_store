@@ -48,8 +48,8 @@ export default function StoreTest() {
   const minusGame = () => dispatch(decreaseItemQuantity({ id: 1 }));
   const getCartTotal = () => dispatch(getTotal());
   const removeGame = () => dispatch(removeFromCart({ id: 1 }));
-  const loginUser = () => dispatch(writeUserToLocalStorage('Matthew'));
-  const logoutUser = () => deleteUserFromLocalStorage();
+  const loginUser = () => dispatch(writeUserToLocalStorage({ name: 'Matthew' }));
+  const logoutUser = () => dispatch(deleteUserFromLocalStorage());
   const getUser = () => console.log(getCurrentUser());
   return (
     <div className="React-App">
