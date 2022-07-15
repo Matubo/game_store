@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Overwatch",
+        "ageLimit": 12,
+        "rating": 5,
+        "price": 23.99,
+        "genre": "Shooter",
+        "platform": { "pc": true, "playstation": true, "xbox": true },
+        "image": "https://upload.wikimedia.org/wikipedia/ru/3/33/Overwatch_Origins_Edition_PC_cover.jpg",
+        "description": "Overwatch is a colorful team-based action game starring a diverse cast of powerful heroes. Travel the world, build a team, and contest objectives in exhilarating 6v6 combat.",
+        "alt": "Overwatch"
+      },
+      {
+        "id": 4,
+        "name": "The Witcher 3: Wild Hunt",
+        "ageLimit": 16,
+        "rating": 5,
+        "price": 29.99,
+        "genre": "RPG",
+        "platform": { "pc": true, "playstation": true, "xbox": true },
+        "image": "http://s.gamer-info.com/gl/t/h/e/w/the-witcher-3-wild-hunt_ba.jpg",
+        "description": "The Witcher 3: Wild Hunt is an action role-playing game with a third-person perspective. Players control Geralt of Rivia, a monster slayer known as a Witcher.",
+        "alt": "The Witcher 3: Wild Hunt"
+      },
+      {
+        "id": 5,
+        "name": "Assassin's Creed Valhalla",
+        "ageLimit": 18,
+        "rating": 5,
+        "price": 25.99,
+        "genre": "Action-adventure",
+        "platform": { "pc": false, "playstation": true, "xbox": false },
+        "image": "https://upload.wikimedia.org/wikipedia/ru/2/26/AC_Valhalla_standard_edition.jpg",
+        "description": "In Assassin's Creed Valhalla, become Eivor, a legendary Viking raider on a quest for glory. Explore a dynamic and beautiful open world set against the brutal backdrop of England's Dark Ages.",
+        "alt": "Assassin's Creed Valhalla"
+      },
+      {
+        "id": 8,
+        "name": "Grand Theft Auto V",
+        "ageLimit": 18,
+        "rating": 5,
+        "price": 10.99,
+        "genre": "Action-adventure",
+        "platform": { "pc": false, "playstation": false, "xbox": true },
+        "image": "https://upload.wikimedia.org/wikipedia/ru/c/c8/GTAV_Official_Cover_Art.jpg",
+        "description": "Grand Theft Auto V is an action-adventure game played from either a third-person or first-person perspective. Players complete missions — linear scenarios — to progress through the story",
+        "alt": "Grand Theft Auto V"
+      }
+]

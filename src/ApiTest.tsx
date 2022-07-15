@@ -1,11 +1,20 @@
-import React from 'react';
 import axios from 'axios';
 
+type ISearchOptions = {
+  name?: string;
+  ageLimit?: number;
+  rating?: number;
+  genre?: string;
+  platform?: { xbox?: boolean; playstation?: boolean; pc?: boolean };
+};
+
 export default function ApiTest() {
-  function getGames() {
+  function getGames(url: string, search_options?: ISearchOptions) {
+    const queryParams = JSON.stringify(search_options);
     const options = {
       method: 'GET',
-      url: '/games'
+      url: `games`,
+      params: search_options
     };
 
     axios
@@ -17,9 +26,16 @@ export default function ApiTest() {
         console.error(error);
       });
   }
+
   return (
     <>
-      <button onClick={getGames}>API Test</button>
+      <button onClick={() => getGames('games')}>game</button>
+      <button onClick={() => getGames('top-games')}>game-top</button>
+      <button
+        onClick={() => {
+          getGames('games', { platform: { xbox: true } });
+        }}
+      ></button>
     </>
   );
 }
