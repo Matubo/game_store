@@ -45,6 +45,7 @@
     "jest": "^28.1.1",
     "lint-staged": "^12.4.1",
     "mini-css-extract-plugin": "^2.6.1",
+    "mocker-api": "^2.9.5",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "postcss": "^8.4.14",
     "postcss-autoreset": "^3.0.4",
@@ -74,6 +75,8 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
     "html-webpack-plugin": "^5.5.0",
     "postcss-mixins": "^9.0.2",
     "postcss-simple-vars": "^6.0.3",
