@@ -1,13 +1,15 @@
-import { useDispatch } from 'react-redux';
 import { getCurrentUser } from './services/auth.service';
 import { writeUserToLocalStorage, deleteUserFromLocalStorage } from './redux/reducers/userReducer';
 import { addToCard, clearCart, decreaseItemQuantity, getTotal, removeFromCart } from './redux/reducers/cartReducer';
 import { useTypedSelector } from './hooks/useTypedSelector';
 import { useAppDispatch } from './hooks/useTypedDispatch';
+import { useState } from 'react';
 
 export default function StoreTest() {
   const dispatch = useAppDispatch();
   const state = useTypedSelector((state) => state);
+  const [active, setActive] = useState(false);
+  const [storageUser, setStorageUser] = useState(getCurrentUser());
   const addGame1 = () => {
     dispatch(
       addToCard({
@@ -48,11 +50,18 @@ export default function StoreTest() {
   const minusGame = () => dispatch(decreaseItemQuantity({ id: 1 }));
   const getCartTotal = () => dispatch(getTotal());
   const removeGame = () => dispatch(removeFromCart({ id: 1 }));
-  const loginUser = () => dispatch(writeUserToLocalStorage({ name: 'Matthew' }));
-  const logoutUser = () => dispatch(deleteUserFromLocalStorage());
-  const getUser = () => console.log(getCurrentUser());
+  const loginUser = () => {
+    dispatch(writeUserToLocalStorage({ name: 'Matthew' }));
+    getUser();
+  };
+  const logoutUser = () => {
+    dispatch(deleteUserFromLocalStorage());
+    getUser();
+  };
+  const getUser = () => setStorageUser(getCurrentUser());
   return (
-    <div className="React-App">
+    <div>
+      <p style={{ color: 'white' }}>store tests</p>
       <button onClick={() => console.log(state)}>getStore</button>
       <button onClick={() => addGame1()}>addGame1</button>
       <button onClick={() => addGame2()}>addGame2</button>
@@ -63,7 +72,22 @@ export default function StoreTest() {
       <button onClick={() => getCartTotal()}>getTotalCart</button>
       <button onClick={() => loginUser()}>loginUser</button>
       <button onClick={() => logoutUser()}>logoutUser</button>
-      <p style={{ color: 'white' }}>{JSON.stringify(state)}</p>
+      <button
+        onClick={() => {
+          setActive(!active);
+        }}
+      >
+        Развернуть результаты
+      </button>
+      {active ? (
+        <p style={{ backgroundColor: '#aba7a7', border: '2px solid #636161', borderRadius: '10px' }}>
+          storageUser:{storageUser ? storageUser : 'empty'}
+          <br></br>
+          {JSON.stringify(state)}
+        </p>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

@@ -1,36 +1,25 @@
 const games = require('./src/data/games.json');
 const top_games = require('./src/data/top_games.json');
 
-const platforms = ['xbox', 'pc', 'playstation'];
+const allPlatforms = ['xbox', 'pc', 'playstation'];
 
 function getGameHandler(req, res) {
   const { name, ageLimit, rating, genre, platform } = req.query;
   let matchGames = games;
   if (name && matchGames.length > 0) matchGames = matchGames.filter((game) => game.name == name);
   if (ageLimit && matchGames.length > 0) matchGames = matchGames.filter((game) => game.ageLimit > ageLimit);
-  if (genre && matchGames.length > 0) matchGames = matchGames.filter((game) => game.genre > genre);
+  if (genre && matchGames.length > 0) matchGames = matchGames.filter((game) => game.genre == genre);
   if (rating && matchGames.length > 0) matchGames = matchGames.filter((game) => game.rating >= rating);
   if (platform && matchGames.length > 0) {
+    let queryPlatform = JSON.parse(platform);
+    let searchedPlatforms = allPlatforms.filter((platform) => platform in queryPlatform);
     matchGames = matchGames.filter((game) => {
-      platforms.forEach((item) => {
-        if (game.platform[item]) {
-          console.log(true);
-          return true;
-        }
-      });
-      return false;
+      let flag = searchedPlatforms.some((element) => game.platform[element]);
+      return flag;
     });
   }
-
   return res.json(matchGames);
 }
-
-/* "name": "Grand Theft Auto V",
-"ageLimit": 18,
-"rating": 5,
-"price": 10.99,
-"genre": "Action-adventure",
-"platform" */
 
 module.exports = proxy = {
   changeHost: true,
@@ -41,10 +30,12 @@ module.exports = proxy = {
   },
   listeners: {
     proxyReq: (proxyReq, req, res, options) => {
-      console.log('proxyReq');
+      console.log(proxyReq);
+      console.log(req);
+      console.log(res);
+      console.log(options);
     }
   },
-  /* 'GET /games': getGameQueryHandler, */
   'GET /games': getGameHandler,
   'GET /top-games': top_games
 };
