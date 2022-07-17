@@ -11,6 +11,7 @@ module.exports = function (env, argv) {
     target: 'web',
     devServer: {
       hot: true,
+      historyApiFallback: true,
       onBeforeSetupMiddleware: (devServer) => {
         apiMocker(devServer.app, webMock);
       }

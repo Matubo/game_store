@@ -2,4 +2,5 @@ body {
   background-image: url('./assets/img/background.jpg');
   background-position: center;
   background-attachment: fixed;
+  color: white;
 }

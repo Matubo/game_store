@@ -1,13 +1,23 @@
-import { useState } from 'react';
-import ApiTest from './ApiTest';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
-import StoreTest from './StoreTest';
+import { routes } from './consts/routes';
+import MineTemplate from './pages/MineTemplate/MineTemplate';
 import TestBlock from './TestBlock';
 
 export default function App() {
   return (
     <div className="React-App">
-      <TestBlock></TestBlock>
+      <BrowserRouter>
+        <MineTemplate>
+          <Routes>
+            {routes.map((elem) => {
+              return <Route path={elem.path} element={elem.component} key={elem.path}></Route>;
+            })}
+          </Routes>
+          <Link to="/about">about</Link>
+        </MineTemplate>
+        <TestBlock></TestBlock>
+      </BrowserRouter>
     </div>
   );
 }
