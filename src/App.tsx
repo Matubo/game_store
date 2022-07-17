@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import { routes } from './consts/routes';
 import MineTemplate from './pages/MineTemplate/MineTemplate';
+import AppRouter from './router/AppRouter';
 import TestBlock from './TestBlock';
 
 export default function App() {
@@ -9,12 +10,7 @@ export default function App() {
     <div className="React-App">
       <BrowserRouter>
         <MineTemplate>
-          <Routes>
-            {routes.map((elem) => {
-              return <Route path={elem.path} element={elem.component} key={elem.path}></Route>;
-            })}
-          </Routes>
-          <Link to="/about">about</Link>
+          <AppRouter></AppRouter>
         </MineTemplate>
         <TestBlock></TestBlock>
       </BrowserRouter>

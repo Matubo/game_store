@@ -20,7 +20,7 @@ export const routes: IRoute[] = [
     component: <p>error</p>,
     exact: false
   },
-  { path: 'category:platforms', component: <p>category</p>, exact: true },
+  { path: 'category:platforms', component: <p>category {window.location.href}</p>, exact: true },
   {
     path: 'cart',
     component: <p>cart</p>,
