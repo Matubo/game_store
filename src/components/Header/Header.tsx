@@ -1,30 +1,21 @@
-import React from 'react';
+import { categories } from 'src/consts/categories';
+import { Link } from 'react-router-dom';
+import HeaderDropdownListElem from './HeaderDropdownListElem';
+import HeaderListElem from './HeaderListElem';
+import header_logo from '../../assets/img/headerIcons/main-logo.png';
+import './Header.scss';
 
 export default function Header() {
   return (
     <div className="navbar-header">
-      <ul className="navbar-list">
-        <li className="navbar-list__item list-item">
-          <a href="/home" className="list-item__link">
-            home
-          </a>
-        </li>
-        <li className="navbar-list__item list-item">
-          <a href="/category:1" className="list-item__link">
-            category
-          </a>
-        </li>
-        <li className="navbar-list__item list-item">
-          <a href="/about" className="list-item__link">
-            about
-          </a>
-        </li>
-        <li className="navbar-list__item list-item">
-          <a href="/cart" className="list-item__link">
-            cart
-          </a>
-        </li>
-      </ul>
+      <Link to="" className="navbar-header__main-logo main-logo">
+        <img src={header_logo} alt="logo" className="main-logo__img"></img>
+        <p className="main-logo__text">Games mmm...</p>
+      </Link>
+      <HeaderListElem link="/home" text="home"></HeaderListElem>
+      <HeaderDropdownListElem text="category" elements={categories}></HeaderDropdownListElem>
+      <HeaderListElem link="/about" text="about"></HeaderListElem>
+      <HeaderListElem link="/cart" text="cart"></HeaderListElem>
     </div>
   );
 }
