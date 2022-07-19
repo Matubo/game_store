@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import { routes } from './consts/routes';
@@ -10,7 +11,9 @@ export default function App() {
     <div className="React-App">
       <BrowserRouter>
         <MineTemplate>
-          <AppRouter></AppRouter>
+          <Suspense fallback={<p>Загрузка</p>}>
+            <AppRouter></AppRouter>
+          </Suspense>
         </MineTemplate>
         <TestBlock></TestBlock>
       </BrowserRouter>
