@@ -1,7 +1,8 @@
 import React, { ReactElement } from 'react';
 import HomePage from '../pages/HomePage/HomePage';
+import { URL } from './urls';
 
-/* const HomePage = React.lazy(() => import('../pages/HomePage/HomePage')); */
+const { about, cart, category, home } = URL;
 const AboutPage = React.lazy(() => import('../pages/AboutPage/AboutPage'));
 const ErrorPage = React.lazy(() => import('../pages/ErrorPage/ErrorPage'));
 const CartPage = React.lazy(() => import('../pages/CartPage/CartPage'));
@@ -15,12 +16,12 @@ interface IRoute {
 
 export const routes: IRoute[] = [
   {
-    path: '',
+    path: home,
     component: <HomePage></HomePage>,
     exact: false
   },
   {
-    path: 'about',
+    path: about,
     component: <AboutPage></AboutPage>,
     exact: false
   },
@@ -29,9 +30,9 @@ export const routes: IRoute[] = [
     component: <ErrorPage></ErrorPage>,
     exact: false
   },
-  { path: 'category/:platforms', component: <ProductsPage></ProductsPage>, exact: true },
+  { path: category, component: <ProductsPage></ProductsPage>, exact: true },
   {
-    path: 'cart',
+    path: cart,
     component: <CartPage></CartPage>,
     exact: false
   }
