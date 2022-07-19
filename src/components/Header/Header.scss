@@ -20,33 +20,26 @@
   margin: 5px;
 }
 .navbar-header__item {
-  width: 150px;
-}
-.dropdown-menu {
-  position: absolute;
-}
-.dropdown-menu__item {
-  border: 1px solid rgb(206, 205, 205);
-  background-color: black;
-  padding: 5px;
-}
-.dropdowb-menu__link {
   height: 100%;
+  width: 150px;
+  text-align: center;
+  border: 1px solid rgb(206, 205, 205);
+}
+.header-cart {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
-.dropdowb-menu__icon {
-  height: 50px;
-  width: 50px;
+.header-cart__img {
   margin: auto;
-  margin-left: 2px;
+  height: 80%;
 }
-.dropdowb-menu__text {
-  margin-left: 5px;
-}
-.navbar-header a:active, /* активная/посещенная ссылка */
-.navbar-header a:hover,  /* при наведении */
-.navbar-header a {
-  text-decoration: none;
-  color: white;
+.navbar-header {
+  a:active,
+  a:hover,
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }

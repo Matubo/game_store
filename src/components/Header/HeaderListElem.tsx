@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import './HeaderListElem.scss';
 
 interface IProps {
   link: string;
@@ -7,10 +8,8 @@ interface IProps {
 
 export default function HeaderListElem({ link, text }: IProps) {
   return (
-    <div className="navbar-header__item header-item" key={text}>
-      <Link to={link} className="header-item__link">
-        {text}
-      </Link>
-    </div>
+    <Link to={link} className="navbar-header__item header-item" key={link}>
+      <p className="header-item__text">{text}</p>
+    </Link>
   );
 }
