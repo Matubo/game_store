@@ -3,9 +3,9 @@ import pcIcon from '../assets/img/headerIcons/pc.png';
 import xboxIcon from '../assets/img/headerIcons/xbox.png';
 
 enum CategoryLink {
-  playstation = 'category/playstation',
-  xbox = 'category/xbox',
-  pc = 'category/pc'
+  playstation = 'category:playstation',
+  xbox = 'category:xbox',
+  pc = 'category:pc'
 }
 
 export const categories = [
