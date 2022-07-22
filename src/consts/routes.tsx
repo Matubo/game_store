@@ -1,8 +1,8 @@
 import React, { ReactElement } from 'react';
 import HomePage from '../pages/HomePage/HomePage';
-import { URL } from './urls';
+import { routesURL } from './routesURL';
 
-const { about, cart, category, home } = URL;
+const { about, cart, category, home } = routesURL;
 const AboutPage = React.lazy(() => import('../pages/AboutPage/AboutPage'));
 const ErrorPage = React.lazy(() => import('../pages/ErrorPage/ErrorPage'));
 const CartPage = React.lazy(() => import('../pages/CartPage/CartPage'));

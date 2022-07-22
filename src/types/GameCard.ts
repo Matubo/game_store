@@ -1,7 +1,7 @@
 export interface IGameCard {
   id: number;
   name: string;
-  imageUrl: string;
+  image: string;
   description?: string;
   rating?: number;
   ageLimit: number;

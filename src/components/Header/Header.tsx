@@ -6,9 +6,9 @@ import header_logo from '../../assets/img/headerIcons/main-logo.png';
 import cart_logo from '../../assets/img/headerIcons/cart.png';
 import './Header.scss';
 import HeaderCartElem from './HeaderCartElem';
-import { URL } from 'src/consts/urls';
+import { routesURL } from 'src/consts/routesURL';
 
-const { about, cart, category, home } = URL;
+const { about, cart, category, home } = routesURL;
 
 export default function Header() {
   return (

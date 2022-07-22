@@ -15,7 +15,7 @@ export default function StoreTest() {
       addToCard({
         id: 1,
         name: 'Game1',
-        imageUrl: 'url',
+        image: 'url',
         description: 'description',
         rating: 5,
         ageLimit: 18,
@@ -33,7 +33,7 @@ export default function StoreTest() {
       addToCard({
         id: 2,
         name: 'Game2',
-        imageUrl: 'url',
+        image: 'url',
         description: 'description',
         rating: 5,
         ageLimit: 18,

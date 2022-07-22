@@ -1,4 +1,4 @@
-export enum URL {
+export enum routesURL {
   home = '',
   about = '/about',
   category = 'category:platforms',
