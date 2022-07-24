@@ -1,4 +1,6 @@
 import './HeaderDropdownListElem.scss';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface IDropdownElement {
   link: string;
@@ -10,9 +12,6 @@ interface IProps {
   text: string;
   elements?: IDropdownElement[];
 }
-
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 export default function HeaderDropdownListElem({ text, elements }: IProps) {
   const [active, setActive] = useState(false);

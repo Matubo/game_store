@@ -1,6 +1,6 @@
 export enum routesURL {
   home = '',
   about = '/about',
-  category = 'category:platforms',
+  category = 'category/:platforms',
   cart = '/cart'
 }

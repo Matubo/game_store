@@ -14,7 +14,7 @@ export default function TestBlock() {
         Test
       </button>
       {testActive ? (
-        <div className="test_block">
+        <div className="test_block" style={{ backgroundColor: 'black' }}>
           <StoreTest></StoreTest>
           <ApiTest></ApiTest>
         </div>

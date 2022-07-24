@@ -6,18 +6,20 @@ const allPlatforms = ['xbox', 'pc', 'playstation'];
 function getGameHandler(req, res) {
   const { name, ageLimit, rating, genre, platform } = req.query;
   let matchGames = games;
-  if (name && matchGames.length > 0) matchGames = matchGames.filter((game) => game.name == name);
-  if (ageLimit && matchGames.length > 0) matchGames = matchGames.filter((game) => game.ageLimit > ageLimit);
-  if (genre && matchGames.length > 0) matchGames = matchGames.filter((game) => game.genre == genre);
-  if (rating && matchGames.length > 0) matchGames = matchGames.filter((game) => game.rating >= rating);
   if (platform && matchGames.length > 0) {
     let queryPlatform = JSON.parse(platform);
-    let searchedPlatforms = allPlatforms.filter((platform) => platform in queryPlatform);
+    let searchedPlatforms = allPlatforms.filter(
+      (platform) => platform in queryPlatform && queryPlatform.platform == true
+    );
     matchGames = matchGames.filter((game) => {
       let flag = searchedPlatforms.some((element) => game.platform[element]);
       return flag;
     });
   }
+  if (name && matchGames.length > 0) matchGames = matchGames.filter((game) => game.name == name);
+  if (ageLimit && matchGames.length > 0) matchGames = matchGames.filter((game) => game.ageLimit > ageLimit);
+  if (genre && matchGames.length > 0) matchGames = matchGames.filter((game) => game.genre == genre);
+  if (rating && matchGames.length > 0) matchGames = matchGames.filter((game) => game.rating >= rating);
   return res.json(matchGames);
 }
 

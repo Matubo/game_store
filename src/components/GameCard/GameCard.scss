@@ -2,9 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100px;
 }
 
 .game-card__img {
-  height: 50px;
-  width: 50px;
+  width: 80px;
+}
+
+.game-card__name {
+  overflow-wrap: break-word;
 }
