@@ -1,18 +1,13 @@
 const games = require('./src/data/games.json');
 const top_games = require('./src/data/top_games.json');
 
-const allPlatforms = ['xbox', 'pc', 'playstation'];
-
 function getGameHandler(req, res) {
-  const { name, ageLimit, rating, genre, platform } = req.query;
+  const { name, ageLimit, rating, genre, platforms } = req.query;
   let matchGames = games;
-  if (platform && matchGames.length > 0) {
-    let queryPlatform = JSON.parse(platform);
-    let searchedPlatforms = allPlatforms.filter(
-      (platform) => platform in queryPlatform && queryPlatform.platform == true
-    );
+  console.log(req.query);
+  if (platforms && matchGames.length > 0) {
     matchGames = matchGames.filter((game) => {
-      let flag = searchedPlatforms.some((element) => game.platform[element]);
+      let flag = platforms.some((element) => game.platform[element]);
       return flag;
     });
   }

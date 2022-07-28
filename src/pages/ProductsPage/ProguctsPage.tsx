@@ -6,20 +6,24 @@ import { APIURL } from 'src/consts/APIURL';
 import { QueryParams, Platforms, QueryPlatforms } from 'src/consts/filterForm';
 
 export default function ProguctsPage() {
-  const param: string = useParams().platforms;
-  const [sort, setSort] = useState({ platform: { param: true } });
-  console.log(param);
+  const params: string = useParams().platforms;
+  const [sort, setSort] = useState({ platforms: [params] });
   const [games, setGames] = useState([]);
   const { search_games } = APIURL;
 
-  useEffect(() => {
-    axios({ method: 'GET', url: search_games })
+  const getGamesWithParams = () => {
+    axios({ method: 'GET', url: search_games, params: sort })
       .then((result) => {
         setGames(result.data);
         console.log(result.data);
       })
       .catch((e) => console.error(e));
-  }, []);
+  };
+  console.log(params);
+  useEffect(() => {
+    setSort({ ...sort, platforms: [params] });
+    getGamesWithParams();
+  }, [params]);
   return (
     <div>
       <SearchResult
