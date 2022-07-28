@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 import SearchResult from 'src/components/SerachResult/SearchResult';
 import { APIURL } from 'src/consts/APIURL';
 import { QueryParams, Platforms, QueryPlatforms } from 'src/consts/filterForm';
+import FilterForm from 'src/forms/FilterForm/FilterForm';
 
 export default function ProguctsPage() {
   const params: string = useParams().platforms;
@@ -26,6 +27,7 @@ export default function ProguctsPage() {
   }, [params]);
   return (
     <div>
+      <FilterForm></FilterForm>
       <SearchResult
         games={games}
         callback={(e) => {
