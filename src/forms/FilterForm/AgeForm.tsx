@@ -1,18 +1,27 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Ages } from '../../consts/filterForm';
 
-export default function AgeForm() {
+interface IProps {
+  onChange: (values: Ages) => void;
+}
+
+export default function AgeForm({ onChange }: IProps) {
   const [checked, setChecked] = useState(Ages.All);
 
-  const checkedHandler = (e: Ages) => {
-    setChecked(e);
+  const checkedHandler = (value: Ages) => {
+    setChecked(value);
+    onChange(value);
   };
 
+  useEffect(() => {
+    console.log(checked);
+  }, [checked]);
+
   return (
-    <div>
+    <div className="age">
       <input
         type="radio"
-        onClick={() => {
+        onChange={() => {
           checkedHandler(Ages.All);
         }}
         name="age__form"
@@ -21,7 +30,7 @@ export default function AgeForm() {
       <label>All</label>
       <input
         type="radio"
-        onClick={() => {
+        onChange={() => {
           checkedHandler(Ages.Three);
         }}
         name="age__form"
@@ -30,7 +39,7 @@ export default function AgeForm() {
       <label>{Ages.Three}</label>
       <input
         type="radio"
-        onClick={() => {
+        onChange={() => {
           checkedHandler(Ages.Six);
         }}
         name="age__form"
@@ -39,7 +48,7 @@ export default function AgeForm() {
       <label>{Ages.Six}</label>
       <input
         type="radio"
-        onClick={() => {
+        onChange={() => {
           checkedHandler(Ages.Twelve);
         }}
         name="age__form"
@@ -48,7 +57,7 @@ export default function AgeForm() {
       <label>{Ages.Twelve}</label>
       <input
         type="radio"
-        onClick={() => {
+        onChange={() => {
           checkedHandler(Ages.Sixteen);
         }}
         name="age__form"
@@ -57,7 +66,7 @@ export default function AgeForm() {
       <label>{Ages.Sixteen}</label>
       <input
         type="radio"
-        onClick={() => {
+        onChange={() => {
           checkedHandler(Ages.Eighteen);
         }}
         name="age__form"

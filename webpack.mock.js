@@ -12,7 +12,7 @@ function getGameHandler(req, res) {
     });
   }
   if (name && matchGames.length > 0) matchGames = matchGames.filter((game) => game.name == name);
-  if (ageLimit && matchGames.length > 0) matchGames = matchGames.filter((game) => game.ageLimit < ageLimit);
+  if (ageLimit && matchGames.length > 0) matchGames = matchGames.filter((game) => game.ageLimit <= ageLimit);
   if (genre && matchGames.length > 0) matchGames = matchGames.filter((game) => game.genre == genre);
   if (rating && matchGames.length > 0) matchGames = matchGames.filter((game) => game.rating >= rating);
   return res.json(matchGames);
@@ -26,12 +26,7 @@ module.exports = proxy = {
     }
   },
   listeners: {
-    proxyReq: (proxyReq, req, res, options) => {
-      /*       console.log(proxyReq);
-      console.log(req);
-      console.log(res);
-      console.log(options); */
-    }
+    proxyReq: (proxyReq, req, res, options) => {}
   },
   'GET /games': getGameHandler,
   'GET /top-games': top_games

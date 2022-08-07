@@ -1,13 +1,13 @@
 export interface QueryPlatforms {
-  xbox?: boolean;
-  playstation?: boolean;
-  pc?: boolean;
+  xbox?: string;
+  playstation?: string;
+  pc?: string;
 }
 
-export interface QueryParams {
-  genres?: string;
+export interface IQueryParams {
+  genre?: string;
   ageLimit?: string;
-  platform?: QueryPlatforms;
+  platforms?: string[];
   name?: string;
 }
 
