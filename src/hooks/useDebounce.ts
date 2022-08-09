@@ -2,16 +2,12 @@ interface IParams {
   callback: () => void;
   debounce: number;
 }
-export const useDebounce = (callback: (value: string) => void, debounce: number, initValue: string) => {
-  let currentValue = initValue;
+export function useDebounce(callback: (value: string) => void, debounce: number) {
   let timeout = setTimeout(() => {}, 0);
 
   function setNewDebounce(value: string) {
-    if (value != currentValue) {
-      clearTimeout(timeout);
-      currentValue = value;
-      timeout = setTimeout(() => callback(value), debounce);
-    }
+    clearTimeout(timeout);
+    timeout = setTimeout(callback, debounce, value);
   }
   return setNewDebounce;
-};
+}
