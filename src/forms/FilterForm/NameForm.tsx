@@ -13,9 +13,9 @@ export default function NameForm({ onChange }: IProps) {
   };
 
   return (
-    <div>
+    <div className="search">
       <input
-        type="search"
+        type="search__imput"
         value={inputState}
         onChange={(e) => {
           const target = e.target as HTMLInputElement;

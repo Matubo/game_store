@@ -11,7 +11,11 @@ function getGameHandler(req, res) {
       return flag;
     });
   }
-  if (name && matchGames.length > 0) matchGames = matchGames.filter((game) => game.name == name);
+  if (name && matchGames.length > 0)
+    matchGames = matchGames.filter((game) => {
+      const regExp = new RegExp(name, 'i');
+      return regExp.test(game.name);
+    });
   if (ageLimit && matchGames.length > 0) matchGames = matchGames.filter((game) => game.ageLimit <= ageLimit);
   if (genre && matchGames.length > 0) matchGames = matchGames.filter((game) => game.genre == genre);
   if (rating && matchGames.length > 0) matchGames = matchGames.filter((game) => game.rating >= rating);
