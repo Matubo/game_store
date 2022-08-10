@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useDebounce } from 'src/hooks/useDebounce';
 
 interface IProps {
   onChange: (value: string) => void;
@@ -8,11 +7,8 @@ interface IProps {
 export default function NameForm({ onChange }: IProps) {
   const [inputState, setInputState] = useState('');
 
-  const debounce = useDebounce(onChange, 1000);
   const onChangeHandler = (value: string) => {
-    setInputState(value);
-    debounce(value);
-    console.log(inputState);
+    onChange(value);
   };
 
   return (

@@ -5,6 +5,7 @@ import SearchResult from 'src/components/SerachResult/SearchResult';
 import { APIURL } from 'src/consts/APIURL';
 import { IQueryParams, Platforms, QueryPlatforms } from 'src/consts/filterForm';
 import FilterForm from 'src/forms/FilterForm/FilterForm';
+import { useDebounce } from 'src/hooks/useDebounce';
 
 export default function ProguctsPage() {
   const params: string = useParams().platforms;
@@ -21,6 +22,8 @@ export default function ProguctsPage() {
       .catch((e) => console.error(e));
   };
 
+  const getGamesWithDebounce = useDebounce(getGamesWithParams, 800);
+
   const setSortParams = (value: IQueryParams) => {
     setSort({ ...sort, ...value });
   };
@@ -30,7 +33,8 @@ export default function ProguctsPage() {
   }, [params]);
 
   useEffect(() => {
-    getGamesWithParams();
+    /* getGamesWithParams(); */
+    getGamesWithDebounce();
   }, [sort]);
 
   return (
