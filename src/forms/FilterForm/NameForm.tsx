@@ -8,6 +8,7 @@ export default function NameForm({ onChange }: IProps) {
   const [inputState, setInputState] = useState('');
 
   const onChangeHandler = (value: string) => {
+    setInputState(value);
     onChange(value);
   };
 
