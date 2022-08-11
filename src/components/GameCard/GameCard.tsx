@@ -1,6 +1,5 @@
 import { IGameCard } from 'src/types/gameCard';
-import err_img from '../../assets/img/error_img/no_image_available.png';
-import card_filter from '../../assets/img/filters/card-filter.png';
+import err_img from '../../assets/img/error_img/no_image_avaliable.jpg';
 import './GameCard.scss';
 
 interface IProps {

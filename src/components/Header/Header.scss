@@ -11,15 +11,20 @@
 .main-logo {
   display: flex;
   flex-direction: row;
+  align-items: center;
   height: auto;
-  margin: 5px;
   margin-right: auto;
+  padding-right: 15px;
+  background: linear-gradient(to right, rgb(49, 49, 49) 80%, black);
 }
 .main-logo__img {
   height: 50px;
   margin: 5px;
 }
 .navbar-header__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   width: 180px;
   text-align: center;

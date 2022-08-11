@@ -59,7 +59,7 @@ module.exports = function (env, argv) {
           ]
         },
         {
-          test: /\.(png|jpe?g|gif|jp2|webp)$/,
+          test: /\.(png|jpeg|jpg|gif|jp2|webp)$/,
           type: 'asset/resource'
         }
       ]

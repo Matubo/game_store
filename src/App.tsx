@@ -17,6 +17,7 @@ export default function App() {
           </Suspense>
         </MineTemplate>
         <TestBlock></TestBlock>
+        <p style={{ backgroundImage: 'white' }}>NO PHOTO</p>
       </BrowserRouter>
     </div>
   );
