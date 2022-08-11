@@ -4,7 +4,7 @@
   align-items: center;
   position: relative;
   width: 180px;
-  height: 260px;
+  height: 270px;
   perspective: 1000px;
   margin: 10px;
 }
@@ -20,9 +20,7 @@
 
 .front__name {
   overflow-wrap: break-word;
-  height: 38px;
   margin: 5px;
-  margin-left: 5px;
 }
 .front__price,
 .back__price {
@@ -48,7 +46,7 @@
   transform: rotateY(180deg);
   background-color: black;
   width: 180px;
-  height: 240px;
+  height: 270px;
   margin: 5px;
   padding: 5px;
   top: 0;
