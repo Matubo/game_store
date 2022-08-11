@@ -28,10 +28,12 @@ export default function CardGame({ game, callback }: IProps) {
       </div>
       <div className="game-card__back">
         <p className="back__description">{description}</p>
-        <p className="back__price">{price}€</p>
-        <button className="back__add-button" onClick={clickHandler}>
-          +
-        </button>
+        <div className="back__add-panel">
+          <p className="add-panel__price">{price} €</p>
+          <button className="add-panel__add-button" onClick={clickHandler}>
+            +
+          </button>
+        </div>
       </div>
     </div>
   );

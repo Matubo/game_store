@@ -22,13 +22,7 @@
   overflow-wrap: break-word;
   margin: 5px;
 }
-.front__price,
-.back__price {
-  height: 27px;
-  text-align: right;
-  margin: 0;
-  margin-right: 5px;
-}
+
 .game-card__front {
   backface-visibility: hidden;
   background-color: rgb(49, 49, 49);
@@ -45,12 +39,35 @@
   position: absolute;
   transform: rotateY(180deg);
   background-color: black;
-  width: 180px;
-  height: 270px;
-  margin: 5px;
-  padding: 5px;
   top: 0;
+  display: flex;
+  flex-direction: column;
 }
+.back__add-panel {
+  margin: 5px;
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.add-panel__price {
+  font-size: medium;
+  white-space: nowrap;
+}
+
+.add-panel__add-button {
+  float: right;
+  background-color: #313131;
+  color: #f2f2f2;
+  font-family: 'Silkscreen';
+  font-weight: bold;
+}
+.add-panel__add-button:hover {
+  background-color: #222222;
+}
+
 .game-card:hover .game-card__front {
   transform: rotateY(180deg);
 }
