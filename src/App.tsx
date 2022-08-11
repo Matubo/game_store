@@ -5,6 +5,7 @@ import { routes } from './consts/routes';
 import MineTemplate from './pages/MineTemplate/MineTemplate';
 import AppRouter from './router/AppRouter';
 import TestBlock from './TestBlock';
+import './assets/fonts/font.css';
 
 export default function App() {
   return (
