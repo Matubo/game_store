@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Genres } from 'src/consts/filterForm';
+import './GenresForm.scss';
 
 interface IProps {
   onChange: (value: Genres) => void;

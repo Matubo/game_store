@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Ages } from '../../consts/filterForm';
+import './AgeForm.scss';
 
 interface IProps {
   onChange: (values: Ages) => void;

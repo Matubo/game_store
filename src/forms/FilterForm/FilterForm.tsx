@@ -27,9 +27,11 @@ export default function FilterForm({ setFilters }: IProps) {
 
   return (
     <div className="filter-form">
-      <NameForm onChange={nameChangeHandler}></NameForm>
-      <AgeForm onChange={ageChangeHandler}></AgeForm>
-      <GenresForm onChange={genresChangeHandler}></GenresForm>
+      <div className="filter-form__sticky">
+        <NameForm onChange={nameChangeHandler}></NameForm>
+        <AgeForm onChange={ageChangeHandler}></AgeForm>
+        <GenresForm onChange={genresChangeHandler}></GenresForm>
+      </div>
     </div>
   );
 }
