@@ -1,0 +1,9 @@
+.filter-form {
+  position: relative;
+  background-color: black;
+  border-right: 1px solid rgb(206, 205, 205);
+  padding: 15px;
+}
+.filter-form * {
+  white-space: nowrap;
+}

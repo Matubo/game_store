@@ -1,7 +1,6 @@
 import { Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import './App.css';
-import { routes } from './consts/routes';
+import './App.scss';
 import MineTemplate from './pages/MineTemplate/MineTemplate';
 import AppRouter from './router/AppRouter';
 import TestBlock from './TestBlock';
@@ -17,7 +16,6 @@ export default function App() {
           </Suspense>
         </MineTemplate>
         <TestBlock></TestBlock>
-        <p style={{ backgroundImage: 'white' }}>NO PHOTO</p>
       </BrowserRouter>
     </div>
   );

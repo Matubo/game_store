@@ -6,6 +6,7 @@ import { APIURL } from 'src/consts/APIURL';
 import { IQueryParams, Platforms, QueryPlatforms } from 'src/consts/filterForm';
 import FilterForm from 'src/forms/FilterForm/FilterForm';
 import { useDebounce } from 'src/hooks/useDebounce';
+import './ProductPage.scss';
 
 export default function ProguctsPage() {
   const params: string = useParams().platforms;
@@ -38,7 +39,7 @@ export default function ProguctsPage() {
   }, [sort]);
 
   return (
-    <div>
+    <div className="product-page">
       <FilterForm setFilters={setSortParams}></FilterForm>
       <SearchResult
         games={games}

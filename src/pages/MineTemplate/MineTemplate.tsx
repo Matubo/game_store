@@ -7,10 +7,10 @@ interface PropTypes {
 
 export default function MineTemplate({ children }: PropTypes) {
   return (
-    <div>
+    <>
       <Header></Header>
       {children}
       <p>Footer</p>
-    </div>
+    </>
   );
 }

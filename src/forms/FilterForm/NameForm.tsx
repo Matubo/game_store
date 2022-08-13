@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './NameForm.scss';
 
 interface IProps {
   onChange: (value: string) => void;
@@ -14,8 +15,10 @@ export default function NameForm({ onChange }: IProps) {
 
   return (
     <div className="search">
+      <p>name</p>
       <input
-        type="search__imput"
+        type="search"
+        className="search__input"
         value={inputState}
         onChange={(e) => {
           const target = e.target as HTMLInputElement;

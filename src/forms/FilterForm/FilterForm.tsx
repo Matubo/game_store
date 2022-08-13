@@ -3,6 +3,7 @@ import { Ages, Genres, IQueryParams } from 'src/consts/filterForm';
 import AgeForm from './AgeForm';
 import GenresForm from './GenresForm';
 import NameForm from './NameForm';
+import './FilterForm.scss';
 
 interface IProps {
   setFilters: (values: IQueryParams) => void;
@@ -25,10 +26,10 @@ export default function FilterForm({ setFilters }: IProps) {
   }, [filtersState]);
 
   return (
-    <div>
+    <div className="filter-form">
+      <NameForm onChange={nameChangeHandler}></NameForm>
       <AgeForm onChange={ageChangeHandler}></AgeForm>
       <GenresForm onChange={genresChangeHandler}></GenresForm>
-      <NameForm onChange={nameChangeHandler}></NameForm>
     </div>
   );
 }
