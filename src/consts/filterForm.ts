@@ -5,10 +5,11 @@ export interface QueryPlatforms {
 }
 
 export interface IQueryParams {
-  genre?: string;
-  ageLimit?: string;
+  genre?: Genres;
+  ageLimit?: Ages;
   platforms?: string[];
   name?: string;
+  rating: Rating;
 }
 
 export enum Genres {
@@ -39,6 +40,14 @@ export enum Criteria {
   Name = 'name',
   Rating = 'rating',
   Price = 'price'
+}
+
+export enum Rating {
+  All = '1',
+  Two = '2',
+  Three = '3',
+  Four = '4',
+  Five = '5'
 }
 
 export enum Types {

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import SearchResult from 'src/components/SerachResult/SearchResult';
 import { APIURL } from 'src/consts/APIURL';
-import { IQueryParams, Platforms, QueryPlatforms } from 'src/consts/filterForm';
+import { IQueryParams } from 'src/consts/filterForm';
 import FilterForm from 'src/forms/FilterForm/FilterForm';
 import { useDebounce } from 'src/hooks/useDebounce';
 import './ProductPage.scss';
@@ -18,12 +18,11 @@ export default function ProguctsPage() {
     axios({ method: 'GET', url: search_games, params: sort })
       .then((result) => {
         setGames(result.data);
-        console.log(result.data);
       })
       .catch((e) => console.error(e));
   };
 
-  const getGamesWithDebounce = useDebounce(getGamesWithParams, 800);
+  const getGamesWithDebounce = useDebounce(getGamesWithParams, 700);
 
   const setSortParams = (value: IQueryParams) => {
     setSort({ ...sort, ...value });
@@ -34,7 +33,6 @@ export default function ProguctsPage() {
   }, [params]);
 
   useEffect(() => {
-    /* getGamesWithParams(); */
     getGamesWithDebounce();
   }, [sort]);
 
@@ -44,8 +42,7 @@ export default function ProguctsPage() {
       <SearchResult
         games={games}
         callback={(e) => {
-          /*           console.log(e);
-          console.log(sort); */
+          //add to cart
         }}
       ></SearchResult>
     </div>

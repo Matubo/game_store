@@ -1,5 +1,6 @@
 import { IGameCard } from 'src/types/gameCard';
 import err_img from '../../assets/img/error_img/no_image_avaliable.jpg';
+import RatingComponent from '../RatingComponent/RatingComponent';
 import './GameCard.scss';
 
 interface IProps {
@@ -8,7 +9,7 @@ interface IProps {
 }
 
 export default function CardGame({ game, callback }: IProps) {
-  const { image, name, price, description } = game;
+  const { image, name, price, description, rating } = game;
 
   const clickHandler = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ export default function CardGame({ game, callback }: IProps) {
   return (
     <div className="search-result__game-card game-card">
       <div className="game-card__front">
+        <RatingComponent count={rating}></RatingComponent>
         <img className="front__img" src={image} onError={imgErrorHandler}></img>
         <p className="front__name">{name}</p>
       </div>

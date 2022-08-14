@@ -7,81 +7,36 @@ interface IProps {
 }
 
 export default function GenresForm({ onChange }: IProps) {
-  const [checked, setChecked] = useState(Genres.All);
-  const checkedHandler = (value: Genres) => {
-    setChecked(value);
+  const [value, setValue] = useState(Genres.All);
+  const changeValueHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value as Genres;
+    setValue(value);
     onChange(value);
   };
 
   return (
     <div className="genre">
-      <p>genre</p>
-      <div>
-        <input
-          type="radio"
-          onChange={() => {
-            checkedHandler(Genres.All);
-          }}
-          name="genre__form"
-          checked={checked == Genres.All}
-        ></input>
-        <label>All</label>
-      </div>
-      <div>
-        <input
-          type="radio"
-          onChange={() => {
-            checkedHandler(Genres.Action);
-          }}
-          name="genre__form"
-          checked={checked == Genres.Action}
-        ></input>
-        <label>Action</label>
-      </div>
-      <div>
-        <input
-          type="radio"
-          onChange={() => {
-            checkedHandler(Genres.RPG);
-          }}
-          name="genre__form"
-          checked={checked == Genres.RPG}
-        ></input>
-        <label>RPG</label>
-      </div>
-      <div>
-        <input
-          type="radio"
-          onChange={() => {
-            checkedHandler(Genres.Sandbox);
-          }}
-          name="genre__form"
-          checked={checked == Genres.Sandbox}
-        ></input>
-        <label>Sandbox</label>
-      </div>
-      <div>
-        <input
-          type="radio"
-          onChange={() => {
-            checkedHandler(Genres.Shooter);
-          }}
-          name="genre__form"
-          checked={checked == Genres.Shooter}
-        ></input>
-        <label>Shooter</label>
-      </div>
-      <div>
-        <input
-          type="radio"
-          onChange={() => {
-            checkedHandler(Genres.Simulator);
-          }}
-          name="genre__form"
-          checked={checked == Genres.Simulator}
-        ></input>
-        <label>Simulator</label>
-      </div>
+      <p className="genre__heading">genre</p>
+      <select className="genre__select genre-select" onChange={changeValueHandler} value={value}>
+        <option className="genre-select__option" value={Genres.All}>
+          all
+        </option>
+        <option className="genre-select__option" value={Genres.Action}>
+          {Genres.Action}
+        </option>
+        <option className="genre-select__option" value={Genres.RPG}>
+          {Genres.RPG}
+        </option>
+        <option className="genre-select__option" value={Genres.Sandbox}>
+          {Genres.Sandbox}
+        </option>
+        <option className="genre-select__option" value={Genres.Shooter}>
+          {Genres.Shooter}
+        </option>
+        <option className="genre-select__option" value={Genres.Simulator}>
+          {Genres.Simulator}
+        </option>
+      </select>
     </div>
   );
 }

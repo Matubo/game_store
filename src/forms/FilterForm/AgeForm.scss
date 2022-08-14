@@ -1,4 +1,12 @@
 .age {
-  position: sticky;
-  top: auto;
+  margin-left: 5px;
+}
+.age__heading {
+  margin: 2px;
+}
+.age-select__option,
+.age-select {
+  font-weight: bold;
+  font-size: medium;
+  font-family: 'Silkscreen';
 }

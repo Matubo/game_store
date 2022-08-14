@@ -15,7 +15,7 @@ export default function NameForm({ onChange }: IProps) {
 
   return (
     <div className="search">
-      <p>name</p>
+      <p className="search__heading">name</p>
       <input
         type="search"
         className="search__input"

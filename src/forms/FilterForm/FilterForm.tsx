@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { Ages, Genres, IQueryParams } from 'src/consts/filterForm';
+import { Ages, Genres, IQueryParams, Rating } from 'src/consts/filterForm';
 import AgeForm from './AgeForm';
 import GenresForm from './GenresForm';
 import NameForm from './NameForm';
 import './FilterForm.scss';
+import RatingForm from './RatingForm';
 
 interface IProps {
   setFilters: (values: IQueryParams) => void;
 }
 
 export default function FilterForm({ setFilters }: IProps) {
-  const [filtersState, setFiltersState] = useState<IQueryParams>({ ageLimit: '', genre: '', name: '' });
+  const [filtersState, setFiltersState] = useState<IQueryParams>({
+    ageLimit: Ages.All,
+    genre: Genres.All,
+    name: '',
+    rating: Rating.All
+  });
   const ageChangeHandler = (value: Ages) => {
     setFiltersState({ ...filtersState, ageLimit: value });
   };
@@ -20,6 +26,9 @@ export default function FilterForm({ setFilters }: IProps) {
   const nameChangeHandler = (value: string) => {
     setFiltersState({ ...filtersState, name: value });
   };
+  const ratingChangeHandler = (value: Rating) => {
+    setFiltersState({ ...filtersState, rating: value });
+  };
 
   useEffect(() => {
     setFilters(filtersState);
@@ -27,11 +36,10 @@ export default function FilterForm({ setFilters }: IProps) {
 
   return (
     <div className="filter-form">
-      <div className="filter-form__sticky">
-        <NameForm onChange={nameChangeHandler}></NameForm>
-        <AgeForm onChange={ageChangeHandler}></AgeForm>
-        <GenresForm onChange={genresChangeHandler}></GenresForm>
-      </div>
+      <NameForm onChange={nameChangeHandler}></NameForm>
+      <AgeForm onChange={ageChangeHandler}></AgeForm>
+      <GenresForm onChange={genresChangeHandler}></GenresForm>
+      <RatingForm onChange={ratingChangeHandler}></RatingForm>
     </div>
   );
 }
