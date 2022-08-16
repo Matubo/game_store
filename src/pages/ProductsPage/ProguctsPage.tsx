@@ -6,6 +6,9 @@ import { APIURL } from 'src/consts/APIURL';
 import { IQueryParams } from 'src/consts/filterForm';
 import FilterForm from 'src/forms/FilterForm/FilterForm';
 import { useDebounce } from 'src/hooks/useDebounce';
+import { useAppDispatch } from 'src/hooks/useTypedDispatch';
+import { addToCard } from 'src/redux/reducers/cartReducer';
+import { IGameCard } from 'src/types/gameCard';
 import './ProductPage.scss';
 
 export default function ProguctsPage() {
@@ -13,6 +16,7 @@ export default function ProguctsPage() {
   const [sort, setSort] = useState({ platforms: [params] });
   const [games, setGames] = useState([]);
   const { search_games } = APIURL;
+  const dispatch = useAppDispatch();
 
   const getGamesWithParams = () => {
     axios({ method: 'GET', url: search_games, params: sort })
@@ -36,15 +40,14 @@ export default function ProguctsPage() {
     getGamesWithDebounce();
   }, [sort]);
 
+  const addToCartHandler = (game: IGameCard) => {
+    dispatch(addToCard(game));
+  };
+
   return (
     <div className="product-page">
-      <FilterForm setFilters={setSortParams}></FilterForm>
-      <SearchResult
-        games={games}
-        callback={(e) => {
-          //add to cart
-        }}
-      ></SearchResult>
+      <FilterForm setFilters={setSortParams} params={params}></FilterForm>
+      <SearchResult games={games} callback={addToCartHandler}></SearchResult>
     </div>
   );
 }

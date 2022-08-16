@@ -8,15 +8,17 @@ import RatingForm from './RatingForm';
 
 interface IProps {
   setFilters: (values: IQueryParams) => void;
+  params: string;
 }
 
-export default function FilterForm({ setFilters }: IProps) {
+export default function FilterForm({ setFilters, params }: IProps) {
   const [filtersState, setFiltersState] = useState<IQueryParams>({
     ageLimit: Ages.All,
     genre: Genres.All,
     name: '',
     rating: Rating.All
   });
+
   const ageChangeHandler = (value: Ages) => {
     setFiltersState({ ...filtersState, ageLimit: value });
   };
@@ -33,6 +35,15 @@ export default function FilterForm({ setFilters }: IProps) {
   useEffect(() => {
     setFilters(filtersState);
   }, [filtersState]);
+
+  useEffect(() => {
+    setFiltersState({
+      ageLimit: Ages.All,
+      genre: Genres.All,
+      name: '',
+      rating: Rating.All
+    });
+  }, [params]);
 
   return (
     <div className="filter-form">
