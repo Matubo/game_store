@@ -36,10 +36,10 @@ export default function FilterForm({ setFilters }: IProps) {
 
   return (
     <div className="filter-form">
-      <NameForm onChange={nameChangeHandler}></NameForm>
-      <AgeForm onChange={ageChangeHandler}></AgeForm>
-      <GenresForm onChange={genresChangeHandler}></GenresForm>
-      <RatingForm onChange={ratingChangeHandler}></RatingForm>
+      <NameForm onChange={nameChangeHandler} name={filtersState.name}></NameForm>
+      <AgeForm onChange={ageChangeHandler} age={filtersState.ageLimit}></AgeForm>
+      <GenresForm onChange={genresChangeHandler} genre={filtersState.genre}></GenresForm>
+      <RatingForm onChange={ratingChangeHandler} rating={filtersState.rating}></RatingForm>
     </div>
   );
 }

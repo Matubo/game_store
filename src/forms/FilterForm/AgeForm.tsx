@@ -4,21 +4,19 @@ import './AgeForm.scss';
 
 interface IProps {
   onChange: (values: Ages) => void;
+  age: Ages;
 }
 
-export default function AgeForm({ onChange }: IProps) {
-  const [value, setValue] = useState(Ages.All);
-
+export default function AgeForm({ onChange, age }: IProps) {
   const changeValueHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value as Ages;
-    setValue(value);
     onChange(value);
   };
 
   return (
     <div className="age">
       <p className="age__heading">age</p>
-      <select className="age__select age-select" onChange={changeValueHandler} value={value}>
+      <select className="age__select age-select" onChange={changeValueHandler} value={age}>
         <option className="age-select__option" value={Ages.All} selected>
           all
         </option>
@@ -33,9 +31,6 @@ export default function AgeForm({ onChange }: IProps) {
         </option>
         <option className="age-select__option" value={Ages.Sixteen}>
           {Ages.Sixteen}
-        </option>
-        <option className="age-select__option" value={Ages.Eighteen}>
-          {Ages.Eighteen}
         </option>
       </select>
     </div>

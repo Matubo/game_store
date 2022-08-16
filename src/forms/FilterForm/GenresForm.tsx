@@ -4,20 +4,19 @@ import './GenresForm.scss';
 
 interface IProps {
   onChange: (value: Genres) => void;
+  genre: Genres;
 }
 
-export default function GenresForm({ onChange }: IProps) {
-  const [value, setValue] = useState(Genres.All);
+export default function GenresForm({ onChange, genre }: IProps) {
   const changeValueHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value as Genres;
-    setValue(value);
     onChange(value);
   };
 
   return (
     <div className="genre">
       <p className="genre__heading">genre</p>
-      <select className="genre__select genre-select" onChange={changeValueHandler} value={value}>
+      <select className="genre__select genre-select" onChange={changeValueHandler} value={genre}>
         <option className="genre-select__option" value={Genres.All}>
           all
         </option>

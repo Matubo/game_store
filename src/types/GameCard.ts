@@ -6,6 +6,7 @@ export interface IGameCard {
   rating?: number;
   ageLimit: number;
   price: number;
+  discount?: number;
   platform: {
     pc: boolean;
     xbox: boolean;

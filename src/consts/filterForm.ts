@@ -9,7 +9,8 @@ export interface IQueryParams {
   ageLimit?: Ages;
   platforms?: string[];
   name?: string;
-  rating: Rating;
+  rating?: Rating;
+  discount?: number;
 }
 
 export enum Genres {

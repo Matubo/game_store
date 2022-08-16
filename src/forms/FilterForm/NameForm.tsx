@@ -3,13 +3,13 @@ import './NameForm.scss';
 
 interface IProps {
   onChange: (value: string) => void;
+  name: string;
 }
 
-export default function NameForm({ onChange }: IProps) {
+export default function NameForm({ onChange, name }: IProps) {
   const [inputState, setInputState] = useState('');
 
   const onChangeHandler = (value: string) => {
-    setInputState(value);
     onChange(value);
   };
 
@@ -19,7 +19,7 @@ export default function NameForm({ onChange }: IProps) {
       <input
         type="search"
         className="search__input"
-        value={inputState}
+        value={name}
         onChange={(e) => {
           const target = e.target as HTMLInputElement;
           onChangeHandler(target.value);
