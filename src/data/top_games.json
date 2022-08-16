@@ -50,7 +50,7 @@
     "discount":5,
     "genre": "RPG",
     "platform": { "pc": true, "playstation": true, "xbox": true },
-    "image": "http://s.gamer-info.com/gl/t/h/e/w/the-witcher-3-wild-hunt_ba.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/ru/a/a2/The_Witcher_3-_Wild_Hunt_Cover.jpg",
     "description": "The Witcher 3: Wild Hunt is an action role-playing game with a third-person perspective. Players control Geralt of Rivia, a monster slayer known as a Witcher.",
     "alt": "The Witcher 3: Wild Hunt"
   },

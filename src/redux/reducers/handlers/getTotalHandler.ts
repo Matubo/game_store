@@ -5,6 +5,7 @@ export const getTotalHandler = (state: ICart) => {
     (cartTotal, cartItem) => {
       const { price, amount } = cartItem;
       cartTotal.totalPrice += price * amount;
+      cartTotal.totalPrice = parseFloat(cartTotal.totalPrice.toFixed(2));
       cartTotal.totalQuantity += amount;
       return cartTotal;
     },
