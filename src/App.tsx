@@ -17,6 +17,7 @@ export default function App() {
         </MineTemplate>
         <TestBlock></TestBlock>
       </BrowserRouter>
+      <div className="app-background"></div>
     </div>
   );
 }
