@@ -63,15 +63,16 @@ export default function CartPage() {
               <td className="cart-table__empty-td"></td>
               <td>{totalQuantity}</td>
               <td>{totalPrice}</td>
-              <td></td>
+              <td className="cart-table__clear-button">
+                <button className="cart__clear-button" onClick={clearCartClickHandler}>
+                  Clear
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
-        <button className="cart__clear-button" onClick={clearCartClickHandler}>
-          Очистить корзину
-        </button>
         <button className="cart__buy-button" onClick={() => {}}>
-          Оформить
+          place an order
         </button>
       </div>
     );
