@@ -2,11 +2,11 @@ import React, { ReactElement } from 'react';
 import HomePage from '../pages/HomePage/HomePage';
 import { routesURL } from './routesURL';
 
-const { about, cart, category, home } = routesURL;
-const AboutPage = React.lazy(() => import('../pages/AboutPage/AboutPage'));
+const { cart, category, home, user } = routesURL;
 const ErrorPage = React.lazy(() => import('../pages/ErrorPage/ErrorPage'));
 const CartPage = React.lazy(() => import('../pages/CartPage/CartPage'));
 const ProductsPage = React.lazy(() => import('../pages/ProductsPage/ProguctsPage'));
+const UserPage = React.lazy(() => import('../pages/UserPage/UserPage'));
 
 interface IRoute {
   path: string;
@@ -21,8 +21,8 @@ export const routes: IRoute[] = [
     exact: false
   },
   {
-    path: about,
-    component: <AboutPage></AboutPage>,
+    path: user,
+    component: <UserPage></UserPage>,
     exact: false
   },
   {
