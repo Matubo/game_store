@@ -1,5 +1,5 @@
-const games = require('./src/data/games.json');
-const top_games = require('./src/data/top_games.json');
+const games = require('./data/games.json');
+const top_games = require('./data/top_games.json');
 
 function getGameHandler(req, res) {
   const { name, ageLimit, rating, genre, platforms } = req.query;
@@ -22,6 +22,12 @@ function getGameHandler(req, res) {
   return res.json(matchGames);
 }
 
+function loggin() {}
+
+function getOrders() {}
+
+function createUser() {}
+
 module.exports = proxy = {
   changeHost: true,
   httpProxy: {
@@ -33,5 +39,8 @@ module.exports = proxy = {
     proxyReq: (proxyReq, req, res, options) => {}
   },
   'GET /games': getGameHandler,
-  'GET /top-games': top_games
+  'GET /top-games': top_games,
+  'POST /loggin': loggin,
+  'GET /get-orders': getOrders,
+  'POST /create-user': createUser
 };
