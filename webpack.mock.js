@@ -24,7 +24,25 @@ function getGameHandler(req, res) {
   return res.json(matchGames);
 }
 
-function loggin() {}
+function loggin(req, res) {
+  const { login, password } = req.query;
+  let result = { status: false };
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].loging == login) {
+      if (users[i].password == password) {
+        result = {
+          status: true,
+          user: users[i]
+        };
+        break;
+      } else {
+        result = { status: false };
+        break;
+      }
+    }
+  }
+  return res.json(result);
+}
 
 function getOrders() {}
 
