@@ -1,17 +1,24 @@
 import { Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import './App.scss';
 import MineTemplate from './pages/MineTemplate/MineTemplate';
 import AppRouter from './router/AppRouter';
 import TestBlock from './TestBlock';
+import './App.scss';
 import './assets/fonts/font.css';
+import loading from './assets/img/loading.gif';
 
 export default function App() {
   return (
     <div className="React-App">
       <BrowserRouter>
         <MineTemplate>
-          <Suspense fallback={<p>Загрузка</p>}>
+          <Suspense
+            fallback={
+              <div className="app-loader">
+                <img src={loading}></img>
+              </div>
+            }
+          >
             <AppRouter></AppRouter>
           </Suspense>
         </MineTemplate>
