@@ -77,5 +77,5 @@ export default function CartPage() {
       </div>
     );
 
-  return <p>cart is empty</p>;
+  return <p className="cart-empty">cart is empty</p>;
 }
