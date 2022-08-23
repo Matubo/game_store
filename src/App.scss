@@ -21,6 +21,13 @@ html {
   background-image: url('./assets/img/background.jpg');
   background-position: center;
 }
+
+@media screen and (orientation: portrait) {
+  .app-background {
+    height: 120vh;
+  }
+}
+
 p {
   font-size: small;
 }

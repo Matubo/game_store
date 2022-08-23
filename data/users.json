@@ -1,2 +1,2 @@
-[{"login":"Test", "password":"Qazwsx123","avatar": "https://cdn-icons-png.flaticon.com/512/2922/2922561.png","username": "Test User","description": "Hello there..."},
-{"login":"Matthew", "password":"Matthew1111","avatar": "https://cdn-icons-png.flaticon.com/512/560/560216.png","username": "Matthew Chuprov", "description": "Piispansilta 9, 02230 Espoo, Finland. Phone number: 88005553535"}]
+[{"username":"Test", "password":"Qazwsx123","avatar": "https://cdn-icons-png.flaticon.com/512/2922/2922561.png","name": "Test User","description": "Hello there..."},
+{"username":"Matthew", "password":"Matthew1111","avatar": "https://cdn-icons-png.flaticon.com/512/560/560216.png","name": "Matthew Chuprov", "description": "Piispansilta 9, 02230 Espoo, Finland. Phone number: 88005553535"}]

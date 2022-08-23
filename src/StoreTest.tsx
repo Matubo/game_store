@@ -1,5 +1,5 @@
 import { getCurrentUser } from './services/auth.service';
-import { writeUserToLocalStorage, deleteUserFromLocalStorage } from './redux/reducers/userReducer';
+import { writeUserToLocalStorage, deleteUserFromLocalStorage, setUserData } from './redux/reducers/userReducer';
 import { addToCard, clearCart, decreaseItemQuantity, getTotal, removeFromCart } from './redux/reducers/cartReducer';
 import { useTypedSelector } from './hooks/useTypedSelector';
 import { useAppDispatch } from './hooks/useTypedDispatch';
@@ -59,6 +59,7 @@ export default function StoreTest() {
     getUser();
   };
   const getUser = () => setStorageUser(getCurrentUser());
+  const setUserParams = () => dispatch(setUserData({ avatar: 'd', description: 'd', name: 'd', username: 'd' }));
   return (
     <div>
       <p style={{ color: 'white' }}>store tests</p>
@@ -72,6 +73,13 @@ export default function StoreTest() {
       <button onClick={() => getCartTotal()}>getTotalCart</button>
       <button onClick={() => loginUser()}>loginUser</button>
       <button onClick={() => logoutUser()}>logoutUser</button>
+      <button
+        onClick={() => {
+          setUserParams();
+        }}
+      >
+        setUserParams
+      </button>
       <button
         onClick={() => {
           setActive(!active);

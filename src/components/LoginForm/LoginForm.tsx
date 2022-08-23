@@ -1,11 +1,13 @@
-import axios from 'axios';
 import React, { useState } from 'react';
-import { APIURL } from 'src/consts/APIURL';
+import { ILoginQuery } from 'src/types/queries/ILoginQuery';
 
-export default function LoginForm() {
+interface IProps {
+  loginQuery: ({ username, password }: ILoginQuery) => void;
+}
+
+export default function LoginForm({ loginQuery }: IProps) {
   const [loginState, setLogin] = useState('');
   const [passwordState, setPassword] = useState('');
-  const { loggin } = APIURL;
 
   const loginChangeHandler = (e: React.SyntheticEvent<HTMLInputElement>) => {
     setLogin(e.currentTarget.value);
@@ -13,18 +15,18 @@ export default function LoginForm() {
   const passwordChangeHandler = (e: React.SyntheticEvent<HTMLInputElement>) => {
     setPassword(e.currentTarget.value);
   };
-  const loginHandler = () => {
-    axios({ method: 'POST', url: loggin, params: { login: loginState, password: passwordState } })
-      .then((result) => {
-        console.log(result);
-      })
-      .catch((result) => console.log(result));
+
+  const loginClickHandler = () => {
+    loginQuery({ username: loginState, password: passwordState });
   };
+
   return (
-    <div>
-      <input type="text" name="" id="" value={loginState} onChange={loginChangeHandler} />
-      <input type="password" name="" id="" value={passwordState} onChange={passwordChangeHandler} />
-      <button onClick={loginHandler}></button>
+    <div className="login-form">
+      <input type="text" className="login-form__login" value={loginState} onChange={loginChangeHandler} />
+      <input type="password" className="login-form__password" value={passwordState} onChange={passwordChangeHandler} />
+      <button className="login-form__button" onClick={loginClickHandler}>
+        login
+      </button>
     </div>
   );
 }

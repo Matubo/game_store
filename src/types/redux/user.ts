@@ -1,3 +1,7 @@
 export interface IUser {
-  user: boolean;
+  login: boolean;
+  name?: string;
+  username?: string;
+  avatar?: string;
+  description?: string;
 }

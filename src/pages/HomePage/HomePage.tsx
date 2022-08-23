@@ -11,12 +11,14 @@ function HomePage() {
   const { top_games } = APIURL;
   const dispatch = useAppDispatch();
   useEffect(() => {
-    axios({ method: 'GET', url: top_games })
-      .then((result) => {
-        setGames(result.data);
-      })
-      .catch((e) => console.error(e));
-  });
+    return () => {
+      axios({ method: 'GET', url: top_games })
+        .then((result) => {
+          setGames(result.data);
+        })
+        .catch((e) => console.error(e));
+    };
+  }, []);
 
   return <SearchResult games={games} callback={(elem: IGameCard) => dispatch(addToCard(elem))}></SearchResult>;
 }

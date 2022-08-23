@@ -20,19 +20,21 @@ function getGameHandler(req, res) {
     });
   if (ageLimit && matchGames.length > 0) matchGames = matchGames.filter((game) => game.ageLimit <= ageLimit);
   if (genre && matchGames.length > 0) matchGames = matchGames.filter((game) => game.genre == genre);
-  if (rating && matchGames.length > 0) matchGames = matchGames.filter((game) => game.rating >= rating);
-  return res.json(matchGames);
+  if (rating && rating > 1 && matchGames.length > 0) matchGames = matchGames.filter((game) => game.rating >= rating);
+  return res.status(200).json(matchGames);
 }
 
 function loggin(req, res) {
-  const { login, password } = req.query;
+  const { username, password } = req.body;
   let result = { status: false };
   for (let i = 0; i < users.length; i++) {
-    if (users[i].loging == login) {
-      if (users[i].password == password) {
+    const user = users[i];
+    if (user.username == username) {
+      if (user.password == password) {
+        const { avatar, description, name, username } = user;
         result = {
           status: true,
-          user: users[i]
+          user: { username, name, description, avatar }
         };
         break;
       } else {
@@ -41,7 +43,7 @@ function loggin(req, res) {
       }
     }
   }
-  return res.json(result); //need 400 status
+  return result.status ? res.status(200).json(result.user) : res.status(401).json({ message: 'Wrong login/password' });
 }
 
 function getOrders() {}

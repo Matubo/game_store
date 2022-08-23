@@ -3,10 +3,10 @@ import { UserActions } from 'src/types/redux/actions/userActions';
 import { IUser } from 'src/types/redux/user';
 import { login, logout } from '../../services/auth.service';
 
-const user = 'user;';
+const user = 'user';
 
 const initialState = {
-  user: false
+  login: false
 };
 
 const writeUserToLocalStorage = createAsyncThunk(
@@ -23,16 +23,26 @@ const deleteUserFromLocalStorage = createAsyncThunk(UserActions.DELETE_USER_FROM
 const userReducer = createSlice({
   initialState: initialState,
   name: user,
-  reducers: {},
+  reducers: {
+    setUserData: (
+      state: IUser,
+      action: PayloadAction<{ name: string; username: string; avatar: string; description: string }>
+    ) => {
+      console.log(action.payload);
+      const { name, username, avatar, description } = action.payload;
+      [state.name, state.username, state.avatar, state.description] = [name, username, avatar, description];
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(writeUserToLocalStorage.fulfilled, (state: IUser) => {
-      state.user = true;
+      state.login = true;
     }),
       builder.addCase(deleteUserFromLocalStorage.fulfilled, (state: IUser) => {
-        state.user = false;
+        state.login = false;
       });
   }
 });
 
 export default userReducer;
 export { writeUserToLocalStorage, deleteUserFromLocalStorage };
+export const { setUserData } = userReducer.actions;
