@@ -7,13 +7,14 @@ import axios from 'axios';
 import { APIURL } from 'src/consts/APIURL';
 import { ILoginQuery } from 'src/types/queries/ILoginQuery';
 import { IChangeUserDataQuery } from 'src/types/queries/ChangeUserDataQuery';
+import { useDebounce } from 'src/hooks/useDebounce';
 
 export default function UserPage() {
   const dispatch = useAppDispatch();
   const user = useTypedSelector((state) => state.user);
-  const { loggin } = APIURL;
+  const { loggin, changeUserData } = APIURL;
 
-  const loginQuery = ({ username, password }: ILoginQuery) => {
+  const loginWithDebounce = useDebounce(({ username, password }: ILoginQuery) => {
     axios
       .post(loggin, { username, password })
       .then((result) => {
@@ -21,9 +22,19 @@ export default function UserPage() {
         dispatch(writeUserToLocalStorage({ name: username }));
       })
       .catch((result) => alert(result.response.data.message));
-  };
+  }, 700);
 
-  const changeUserDataHandler = (data: IChangeUserDataQuery) => {};
+  const changeUserDataWithDebounce = useDebounce((data: IChangeUserDataQuery) => {
+    axios
+      .post(changeUserData, { username: user.username, ...data })
+      .then((result) => {
+        dispatch(setUserData({ ...result.data }));
+        alert('Данные обновлены');
+      })
+      .catch((result) => {
+        alert(result.response.data.message);
+      });
+  }, 700);
 
   const logoutHandler = () => {
     dispatch(deleteUserFromLocalStorage());
@@ -31,10 +42,10 @@ export default function UserPage() {
 
   return user.login ? (
     <>
-      <UserInformation changeUserData={changeUserDataHandler} userData={user}></UserInformation>
+      <UserInformation changeUserData={changeUserDataWithDebounce} userData={user}></UserInformation>
       <button onClick={logoutHandler}>logout</button>
     </>
   ) : (
-    <LoginForm loginQuery={loginQuery}></LoginForm>
+    <LoginForm loginQuery={loginWithDebounce}></LoginForm>
   );
 }

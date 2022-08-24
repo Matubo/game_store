@@ -1,6 +1,6 @@
-import playstationIcon from '../assets/img/headerIcons/playstation.png';
-import pcIcon from '../assets/img/headerIcons/pc.png';
-import xboxIcon from '../assets/img/headerIcons/xbox.png';
+import playstationIcon from '../assets/img/header_icons/playstation.png';
+import pcIcon from '../assets/img/header_icons/pc.png';
+import xboxIcon from '../assets/img/header_icons/xbox.png';
 
 enum CategoryLink {
   playstation = 'category/playstation',

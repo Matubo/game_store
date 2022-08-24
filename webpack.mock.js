@@ -50,6 +50,21 @@ function getOrders() {}
 
 function createUser() {}
 
+function changeUserData(req, res) {
+  const { username, avatar, name, description } = req.body;
+  let result = { status: false };
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].username == username) {
+      users[i].avatar = avatar;
+      users[i].name = name;
+      users[i].description = description;
+      result = { status: true, user: users[i] };
+      break;
+    }
+  }
+  return res.status ? res.status(200).json(result.user) : res.status(400).json({ message: 'Something went wrong' });
+}
+
 module.exports = proxy = {
   changeHost: true,
   httpProxy: {
@@ -63,6 +78,7 @@ module.exports = proxy = {
   'GET /games': getGameHandler,
   'GET /top-games': top_games,
   'POST /loggin': loggin,
+  'POST /change-user-data': changeUserData,
   'GET /get-orders': getOrders,
   'POST /create-user': createUser
 };

@@ -3,5 +3,6 @@ export enum APIURL {
   top_games = '/top-games',
   loggin = '/loggin',
   getOrders = '/get-orders',
-  createUser = '/create-user'
+  createUser = '/create-user',
+  changeUserData = 'change-user-data'
 }

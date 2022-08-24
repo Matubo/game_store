@@ -6,7 +6,8 @@ import { login, logout } from '../../services/auth.service';
 const user = 'user';
 
 const initialState = {
-  login: false
+  login: false,
+  username: ''
 };
 
 const writeUserToLocalStorage = createAsyncThunk(

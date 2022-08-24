@@ -26,7 +26,7 @@ export default function LoginForm({ loginQuery }: IProps) {
   const loginClickHandler = () => {
     loginQuery({ username: loginState, password: passwordState });
   };
-
+  //сделай вход тутаже здесяже вэтоммесяще
   return (
     <div className="login-form" onKeyUp={keyHandler}>
       <input type="text" className="login-form__login" value={loginState} onChange={loginChangeHandler} />
