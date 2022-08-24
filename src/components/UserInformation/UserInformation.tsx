@@ -15,11 +15,11 @@ export default function UserInformation({ changeUserData, userData }: IProps) {
 
   return (
     <div className="user-page">
-      <img src={avatar}></img>
-      <p>{name}</p>
+      <img src={avatarState}></img>
+      <p>{nameState}</p>
       <p>{username}</p>
       <p contentEditable="true" className="user-page__description">
-        {description}
+        {descriptionState}
       </p>
     </div>
   );

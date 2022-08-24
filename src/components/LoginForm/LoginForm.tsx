@@ -9,6 +9,13 @@ export default function LoginForm({ loginQuery }: IProps) {
   const [loginState, setLogin] = useState('');
   const [passwordState, setPassword] = useState('');
 
+  const keyHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    if (e.code == 'Enter') {
+      loginClickHandler();
+    }
+  };
+
   const loginChangeHandler = (e: React.SyntheticEvent<HTMLInputElement>) => {
     setLogin(e.currentTarget.value);
   };
@@ -21,7 +28,7 @@ export default function LoginForm({ loginQuery }: IProps) {
   };
 
   return (
-    <div className="login-form">
+    <div className="login-form" onKeyUp={keyHandler}>
       <input type="text" className="login-form__login" value={loginState} onChange={loginChangeHandler} />
       <input type="password" className="login-form__password" value={passwordState} onChange={passwordChangeHandler} />
       <button className="login-form__button" onClick={loginClickHandler}>

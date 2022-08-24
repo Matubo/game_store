@@ -5,7 +5,7 @@ import StoreTest from './StoreTest';
 export default function TestBlock() {
   const [testActive, setTestActive] = useState(false);
   return (
-    <div style={{ position: 'absolute', top: 0, left: 0, zIndex: 10001 }}>
+    <div style={{ position: 'fixed', top: 0, left: 0, zIndex: 10001 }}>
       <button
         onClick={() => {
           setTestActive(!testActive);
