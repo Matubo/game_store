@@ -48,7 +48,17 @@ function loggin(req, res) {
 
 function getOrders() {}
 
-function createUser() {}
+function createUser(req, res) {
+  const { username, password } = req.body;
+  const user = users.find((user) => user.username == username);
+  if (user == undefined) {
+    const newUser = { username: username, password: password, avatar: '', description: '', name: '' };
+    users.push(newUser);
+    return res.status(200).json(newUser);
+  } else {
+    return res.status(400).json({ message: 'This username already exists' });
+  }
+}
 
 function changeUserData(req, res) {
   const { username, avatar, name, description } = req.body;
@@ -62,7 +72,7 @@ function changeUserData(req, res) {
       break;
     }
   }
-  return res.status ? res.status(200).json(result.user) : res.status(400).json({ message: 'Something went wrong' });
+  return result.status ? res.status(200).json(result.user) : res.status(400).json({ message: 'Something went wrong' });
 }
 
 module.exports = proxy = {

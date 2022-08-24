@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { ILoginQuery } from 'src/types/queries/ILoginQuery';
+import { CreateUserQueryParams } from 'src/types/queries/CreateUserQuery';
+import { LoginQueryParams } from 'src/types/queries/LoginQuery';
 
 interface IProps {
-  loginQuery: ({ username, password }: ILoginQuery) => void;
+  loginQuery: ({ username, password }: LoginQueryParams) => void;
+  signupQuery: ({ username, password }: CreateUserQueryParams) => void;
 }
 
-export default function LoginForm({ loginQuery }: IProps) {
+export default function LoginForm({ loginQuery, signupQuery }: IProps) {
   const [loginState, setLogin] = useState('');
   const [passwordState, setPassword] = useState('');
 
@@ -26,14 +28,21 @@ export default function LoginForm({ loginQuery }: IProps) {
   const loginClickHandler = () => {
     loginQuery({ username: loginState, password: passwordState });
   };
+
+  const signupClickHandler = () => {
+    signupQuery({ username: loginState, password: passwordState });
+  };
+
   //сделай вход тутаже здесяже вэтоммесяще
   return (
     <div className="login-form" onKeyUp={keyHandler}>
+      <p>LogIn</p>
       <input type="text" className="login-form__login" value={loginState} onChange={loginChangeHandler} />
       <input type="password" className="login-form__password" value={passwordState} onChange={passwordChangeHandler} />
       <button className="login-form__button" onClick={loginClickHandler}>
         login
       </button>
+      <button onClick={signupClickHandler}>signup</button>
     </div>
   );
 }

@@ -5,26 +5,28 @@ import { useTypedSelector } from 'src/hooks/useTypedSelector';
 import { setUserData, writeUserToLocalStorage, deleteUserFromLocalStorage } from 'src/redux/reducers/userReducer';
 import axios from 'axios';
 import { APIURL } from 'src/consts/APIURL';
-import { ILoginQuery } from 'src/types/queries/ILoginQuery';
-import { IChangeUserDataQuery } from 'src/types/queries/ChangeUserDataQuery';
+import { LoginQueryParams } from 'src/types/queries/LoginQuery';
+import { ChangeUserDataQueryParams } from 'src/types/queries/ChangeUserDataQuery';
 import { useDebounce } from 'src/hooks/useDebounce';
+import { CreateUserQueryParams } from 'src/types/queries/CreateUserQuery';
+import { IUser } from 'src/types/redux/user';
 
 export default function UserPage() {
   const dispatch = useAppDispatch();
   const user = useTypedSelector((state) => state.user);
-  const { loggin, changeUserData } = APIURL;
+  const { loggin, changeUserData, createUser } = APIURL;
 
-  const loginWithDebounce = useDebounce(({ username, password }: ILoginQuery) => {
+  const loginWithDebounce = useDebounce(({ username, password }: LoginQueryParams) => {
     axios
       .post(loggin, { username, password })
       .then((result) => {
         dispatch(setUserData({ ...result.data }));
-        dispatch(writeUserToLocalStorage({ name: username }));
+        dispatch(writeUserToLocalStorage({ name: result.data.username }));
       })
       .catch((result) => alert(result.response.data.message));
   }, 700);
 
-  const changeUserDataWithDebounce = useDebounce((data: IChangeUserDataQuery) => {
+  const changeUserDataWithDebounce = useDebounce((data: ChangeUserDataQueryParams) => {
     axios
       .post(changeUserData, { username: user.username, ...data })
       .then((result) => {
@@ -36,6 +38,17 @@ export default function UserPage() {
       });
   }, 700);
 
+  const signupWithDebounce = useDebounce((data: CreateUserQueryParams) => {
+    axios
+      .post(createUser, { ...data })
+      .then((result) => {
+        dispatch(setUserData({ ...result.data }));
+        dispatch(writeUserToLocalStorage({ name: result.data.username }));
+      })
+      .catch((result) => {
+        alert(result.response.data.message);
+      });
+  }, 700);
   const logoutHandler = () => {
     dispatch(deleteUserFromLocalStorage());
   };
@@ -46,6 +59,6 @@ export default function UserPage() {
       <button onClick={logoutHandler}>logout</button>
     </>
   ) : (
-    <LoginForm loginQuery={loginWithDebounce}></LoginForm>
+    <LoginForm loginQuery={loginWithDebounce} signupQuery={signupWithDebounce}></LoginForm>
   );
 }

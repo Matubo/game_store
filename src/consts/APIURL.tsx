@@ -4,5 +4,5 @@ export enum APIURL {
   loggin = '/loggin',
   getOrders = '/get-orders',
   createUser = '/create-user',
-  changeUserData = 'change-user-data'
+  changeUserData = '/change-user-data'
 }

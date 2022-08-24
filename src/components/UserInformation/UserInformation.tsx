@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { IChangeUserDataQuery } from 'src/types/queries/ChangeUserDataQuery';
+import { ChangeUserDataQueryParams } from 'src/types/queries/ChangeUserDataQuery';
 import { IUser } from 'src/types/redux/user';
 import defaultImg from '../../assets/img/default_profile.png';
 
 interface IProps {
-  changeUserData: (data: IChangeUserDataQuery) => void;
+  changeUserData: (data: ChangeUserDataQueryParams) => void;
   userData: IUser;
 }
 
