@@ -52,7 +52,7 @@ export default function UserPage() {
   const logoutHandler = () => {
     dispatch(deleteUserFromLocalStorage());
   };
-
+  console.log('Test');
   return user.login ? (
     <>
       <UserInformation changeUserData={changeUserDataWithDebounce} userData={user}></UserInformation>
