@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CreateUserQueryParams } from 'src/types/queries/CreateUserQuery';
 import { LoginQueryParams } from 'src/types/queries/LoginQuery';
+import './LoginForm.scss';
 
 interface IProps {
   loginQuery: ({ username, password }: LoginQueryParams) => void;
@@ -10,6 +11,7 @@ interface IProps {
 export default function LoginForm({ loginQuery, signupQuery }: IProps) {
   const [loginState, setLogin] = useState('');
   const [passwordState, setPassword] = useState('');
+  const [singup, setSingup] = useState(false);
 
   const keyHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -26,23 +28,43 @@ export default function LoginForm({ loginQuery, signupQuery }: IProps) {
   };
 
   const loginClickHandler = () => {
-    loginQuery({ username: loginState, password: passwordState });
+    singup
+      ? signupQuery({ username: loginState, password: passwordState })
+      : loginQuery({ username: loginState, password: passwordState });
   };
 
-  const signupClickHandler = () => {
-    signupQuery({ username: loginState, password: passwordState });
-  };
-
-  //сделай вход тутаже здесяже вэтоммесяще
   return (
-    <div className="login-form" onKeyUp={keyHandler}>
-      <p>LogIn</p>
-      <input type="text" className="login-form__login" value={loginState} onChange={loginChangeHandler} />
-      <input type="password" className="login-form__password" value={passwordState} onChange={passwordChangeHandler} />
-      <button className="login-form__button" onClick={loginClickHandler}>
-        login
-      </button>
-      <button onClick={signupClickHandler}>signup</button>
+    <div className="login-page">
+      <div className="login-page__login-form login-form" onKeyUp={keyHandler}>
+        <div className="login-form__login-type">
+          <h1
+            style={singup ? { color: 'black' } : { color: 'white' }}
+            onClick={() => setSingup(false)}
+            className="login-type__login"
+          >
+            {'<SIGNIN'}
+          </h1>{' '}
+          <h1
+            style={singup ? { color: 'white' } : { color: 'black' }}
+            onClick={() => setSingup(true)}
+            className="login-type__signup"
+          >
+            {'SIGNUP>'}
+          </h1>
+        </div>
+        <p className="login-form__input-header">LogIn</p>
+        <input type="text" className="login-form__login" value={loginState} onChange={loginChangeHandler} />
+        <p className="login-form__input-header">password</p>
+        <input
+          type="password"
+          className="login-form__password"
+          value={passwordState}
+          onChange={passwordChangeHandler}
+        />
+        <button className="login-form__button" onClick={loginClickHandler}>
+          confirm
+        </button>
+      </div>
     </div>
   );
 }
