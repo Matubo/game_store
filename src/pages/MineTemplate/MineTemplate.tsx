@@ -17,18 +17,20 @@ export default function MineTemplate({ children }: PropTypes) {
   useEffect(() => {
     const isLogin = getCurrentUser();
     if (isLogin) {
-      axios
-        .post(getUsedUser, { username: isLogin }) //simulation
-        .then((result) => {
-          const { username } = result.data;
-          dispatch(setUserData({ ...result.data }));
-          dispatch(writeUserToLocalStorage(username));
-          console.log(result);
-        })
-        .catch((result) => {
-          console.log(result);
-          logout();
-        });
+      return () => {
+        axios
+          .post(getUsedUser, { username: isLogin }) //simulation
+          .then((result) => {
+            const { username } = result.data;
+            dispatch(setUserData({ ...result.data }));
+            dispatch(writeUserToLocalStorage(username));
+            console.log(result);
+          })
+          .catch((result) => {
+            console.log(result);
+            logout();
+          });
+      };
     }
   }, []);
 
