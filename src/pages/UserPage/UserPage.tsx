@@ -21,7 +21,7 @@ export default function UserPage() {
       .post(loggin, { username, password })
       .then((result) => {
         dispatch(setUserData({ ...result.data }));
-        dispatch(writeUserToLocalStorage({ name: result.data.username }));
+        dispatch(writeUserToLocalStorage({ username: result.data.username }));
       })
       .catch((result) => alert(result.response.data.message));
   }, 700);
@@ -43,7 +43,7 @@ export default function UserPage() {
       .post(createUser, { ...data })
       .then((result) => {
         dispatch(setUserData({ ...result.data }));
-        dispatch(writeUserToLocalStorage({ name: result.data.username }));
+        dispatch(writeUserToLocalStorage({ username: result.data.username }));
       })
       .catch((result) => {
         alert(result.response.data.message);

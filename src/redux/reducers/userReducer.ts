@@ -12,8 +12,8 @@ const initialState = {
 
 const writeUserToLocalStorage = createAsyncThunk(
   UserActions.WRITE_USER_TO_LOCAL_STORAGE,
-  ({ name }: { name: string }) => {
-    login(name);
+  ({ username }: { username: string }) => {
+    login(username);
   }
 );
 

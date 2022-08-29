@@ -51,7 +51,7 @@ export default function StoreTest() {
   const getCartTotal = () => dispatch(getTotal());
   const removeGame = () => dispatch(removeFromCart({ id: 1 }));
   const loginUser = () => {
-    dispatch(writeUserToLocalStorage({ name: 'Matthew' }));
+    dispatch(writeUserToLocalStorage({ username: 'Matthew' }));
     getUser();
   };
   const logoutUser = () => {
