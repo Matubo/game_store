@@ -6,7 +6,8 @@ module.exports = function (env, argv) {
 
   const extendedConf = {
     mode: 'development',
-    devtool: 'eval-cheap-module-source-map'
+    devtool: 'eval-cheap-module-source-map',
+    watch: true
   };
   return merge(commonConf, extendedConf);
 };

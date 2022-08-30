@@ -53,11 +53,22 @@ export default function UserInformation({ changeUserData, userData }: IProps) {
 
   return (
     <div className="user-information">
-      <img src={bioState.avatar ? bioState.avatar : defaultImg}></img>
-      <input type="file" onChange={changeAvatarHandler} disabled={disabled} />
-      <p>Your login : {username}</p>
-      <p>Your name :</p>
-      <input type="text" value={bioState.name} disabled={disabled} onChange={changeNameHandler}></input>
+      <div className="user-information__main-data">
+        <div className="main-data__profile-pic">
+          <img src={bioState.avatar ? bioState.avatar : defaultImg} className="profile-pic__img"></img>
+          <input
+            type="file"
+            onChange={changeAvatarHandler}
+            disabled={disabled}
+            className="profile-pic__change-button"
+          />
+        </div>
+        <div className="main-data__profile-data">
+          <p>Your login : {username}</p>
+          <p>Your name :</p>
+          <input type="text" value={bioState.name} disabled={disabled} onChange={changeNameHandler}></input>
+        </div>
+      </div>
       <p>Your bio :</p>
       <input type="text" value={bioState.description} disabled={disabled} onChange={changeDescriptionHandler}></input>
       <button onClick={changeActive}>{disabled ? 'edit' : 'set'}</button>

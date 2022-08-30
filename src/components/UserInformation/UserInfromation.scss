@@ -1,7 +1,10 @@
 .user-information {
-  input {
-    font-family: 'Pixel Times';
-    font-size: medium;
-    font-weight: bold;
-  }
+  padding-top: 5px;
+}
+.user-information__main-data {
+  display: flex;
+  flex-direction: row;
+}
+.profile-pic__change-button {
+  display: block;
 }

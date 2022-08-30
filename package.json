@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "webpack --watch",
     "start": "npm run serve",
-    "serve": "webpack serve --open --config webpack.devServer.js",
+    "serve": "webpack serve --progress --open --config webpack.devServer.js",
     "build": "webpack",
     "build-prod": "webpack --mode production --config webpack.prod.js",
     "lint": "eslint .",
