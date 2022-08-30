@@ -1,4 +1,4 @@
-import UserInformation from 'src/components/UserInformation/userInformation';
+import UserInformation from 'src/components/UserInformation/UserInformation';
 import LoginForm from 'src/components/LoginForm/LoginForm';
 import { useAppDispatch } from 'src/hooks/useTypedDispatch';
 import { useTypedSelector } from 'src/hooks/useTypedSelector';
@@ -9,7 +9,6 @@ import { LoginQueryParams } from 'src/types/queries/LoginQuery';
 import { ChangeUserDataQueryParams } from 'src/types/queries/ChangeUserDataQuery';
 import { useDebounce } from 'src/hooks/useDebounce';
 import { CreateUserQueryParams } from 'src/types/queries/CreateUserQuery';
-import { IUser } from 'src/types/redux/user';
 
 export default function UserPage() {
   const dispatch = useAppDispatch();
