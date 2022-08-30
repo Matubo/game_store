@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ChangeUserDataQueryParams } from 'src/types/queries/ChangeUserDataQuery';
 import { IUser } from 'src/types/redux/user';
+import './UserInfromation.scss';
 import defaultImg from '../../assets/img/default_profile.png';
 
 interface IProps {
@@ -37,7 +38,6 @@ export default function UserInformation({ changeUserData, userData }: IProps) {
     const file = e.currentTarget.files[0];
     const reader = new FileReader();
     reader.onloadend = function () {
-      console.log(reader);
       if (file.type.match('image.*')) {
         if (file.size < 358400) {
           setBioState({ ...bioState, avatar: reader.result as string });
@@ -52,7 +52,7 @@ export default function UserInformation({ changeUserData, userData }: IProps) {
   };
 
   return (
-    <div className="user-page">
+    <div className="user-information">
       <img src={bioState.avatar ? bioState.avatar : defaultImg}></img>
       <input type="file" onChange={changeAvatarHandler} disabled={disabled} />
       <p>Your login : {username}</p>

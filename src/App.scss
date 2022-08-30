@@ -11,6 +11,17 @@ html {
   margin: 0;
   padding: 0;
 }
+button {
+  font-size: medium;
+  font-weight: bold;
+  font-family: 'Silkscreen';
+}
+input,
+select {
+  font-family: 'Silkscreen', 'Pixel Times';
+  font-size: medium;
+  font-weight: bold;
+}
 .app-background {
   position: fixed;
   height: 100vh;
