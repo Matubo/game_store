@@ -80,20 +80,20 @@ export default function UserInformation({ changeUserData, userData }: IProps) {
         </div>
         <div className="main-data__profile-data">
           <p className="profile-data__heading">USER PROFILE</p>
-          <p className="main-data__login">Your login : {username}</p>
-          <p className="main-data__name-heading">Your name : </p>
+          <p className="profile-data__login">Your login : {username}</p>
+          <p className="profile-data__name-heading">Your name : </p>
           <input
             type="text"
-            className="main-data__name"
+            className="profile-data__name"
             value={bioState.name}
             disabled={disabled}
             onChange={changeNameHandler}
           ></input>
         </div>
       </div>
-      <p>Your bio :</p>
+      <p className="user-information__bio-heading">Your bio : </p>
       <textarea
-        className="user-information__bio"
+        className="user-information__bio-text"
         value={bioState.description}
         disabled={disabled}
         onChange={changeDescriptionHandler}
