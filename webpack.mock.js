@@ -3,6 +3,16 @@ const top_games = require('./data/top_games.json');
 const users = require('./data/users.json');
 const users_order = require('./data/users_orders.json');
 
+//simulation
+
+function getCurrentDate() {
+  let currentDate = new Date();
+  let currentYear = currentDate.getFullYear();
+  let currentMonth = currentDate.getMonth() + 1 < 9 ? '0' + currentDate.getMonth() + 1 : currentDate.getMonth() + 1;
+  let currentDay = currentDate.getDate() < 9 ? '0' + currentDate.getDate() : currentDate.getDate();
+  return `${currentDay}-${currentMonth}-${currentYear}`;
+}
+
 function getGameHandler(req, res) {
   const { name, ageLimit, rating, genre, platforms } = req.query;
   let matchGames = games;
@@ -47,7 +57,6 @@ function loggin(req, res) {
 }
 
 function logginByLocalStorage(req, res) {
-  //simulation
   const { username } = req.body;
   let result = { status: false };
   for (let i = 0; i < users.length; i++) {
@@ -64,7 +73,33 @@ function logginByLocalStorage(req, res) {
   return result.status ? res.status(200).json(result.user) : res.status(400).json({ message: 'Not found' });
 }
 
-function getOrders() {}
+function setOrder(req, res) {
+  const { username, order } = req.body;
+  let result = { status: false };
+  for (let i = 0; i < users_order.length; i++) {
+    if (users_order[i].username == username) {
+      let newId = users_order[i].orders.length;
+      users_order[i].orders.push({ id: newId, date: getCurrentDate(), order });
+      result = { status: true };
+      break;
+    }
+  }
+  return result.status
+    ? res.status(200).json({ message: 'Order added' })
+    : res.status(400).json({ message: 'Something went wrong' });
+}
+
+function getOrders(req, res) {
+  const { username } = req.body;
+  let result = { status: false };
+  for (let i = 0; i < users_order.length; i++) {
+    if (users_order[i].username == username) {
+      result = { status: true, orders: users_order[i].orders };
+      break;
+    }
+  }
+  return result.status ? res.status(200).json(result.orders) : res.status(400).json({ message: 'Not found' });
+}
 
 function createUser(req, res) {
   const { username, password } = req.body;
@@ -107,7 +142,8 @@ module.exports = proxy = {
   'GET /top-games': top_games,
   'POST /loggin': loggin,
   'POST /change-user-data': changeUserData,
-  'GET /get-orders': getOrders,
+  'POST /get-orders': getOrders,
+  'POST /set-order': setOrder,
   'POST /create-user': createUser,
   'POST /get-used-user': logginByLocalStorage
 };
