@@ -1,3 +1,3 @@
-export interface GetOrdersQueruParams {
+export interface GetOrdersQueryParams {
   username: string;
 }

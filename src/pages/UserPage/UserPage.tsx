@@ -9,6 +9,7 @@ import { LoginQueryParams } from 'src/types/queries/LoginQuery';
 import { ChangeUserDataQueryParams } from 'src/types/queries/ChangeUserDataQuery';
 import { useDebounce } from 'src/hooks/useDebounce';
 import { CreateUserQueryParams } from 'src/types/queries/CreateUserQuery';
+import OrdersList from 'src/components/OrdersList/OrdersList';
 
 export default function UserPage() {
   const dispatch = useAppDispatch();
@@ -56,6 +57,7 @@ export default function UserPage() {
     <>
       <UserInformation changeUserData={changeUserDataWithDebounce} userData={user}></UserInformation>
       <button onClick={logoutHandler}>logout</button>
+      <OrdersList username={user.username}></OrdersList>
     </>
   ) : (
     <LoginForm loginQuery={loginWithDebounce} signupQuery={signupWithDebounce}></LoginForm>
