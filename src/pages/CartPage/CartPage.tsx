@@ -1,19 +1,34 @@
 import { useAppDispatch } from 'src/hooks/useTypedDispatch';
 import { useTypedSelector } from 'src/hooks/useTypedSelector';
 import { decreaseItemQuantity, clearCart } from 'src/redux/reducers/cartReducer';
+import { APIURL } from 'src/consts/APIURL';
 import err_img from '../../assets/img/error_img/no_image_avaliable.jpg';
 import './CartPage.scss';
+import { ICartItem } from 'src/types/redux/cart';
+import axios from 'axios';
 
 export default function CartPage() {
   const dispatch = useAppDispatch();
   const { cartItems, totalPrice, totalQuantity } = useTypedSelector((state) => state.cart);
-  /*   const {} = useTypedSelector((state) => state.user.user); */
+  const { username } = useTypedSelector((state) => state.user);
+  const { setOrder } = APIURL;
+
+  const placeAnOrderQuery = () => {
+    axios
+      .post(setOrder, { username, order: cartItems })
+      .then(() => {
+        clearCartHandler();
+      })
+      .catch((result) => {
+        alert(result.message);
+      });
+  };
 
   const decreaseClickHandler = (id: number) => {
     dispatch(decreaseItemQuantity({ id }));
   };
 
-  const clearCartClickHandler = () => {
+  const clearCartHandler = () => {
     dispatch(clearCart());
   };
 
@@ -64,14 +79,14 @@ export default function CartPage() {
               <td>{totalQuantity}</td>
               <td>{totalPrice}</td>
               <td className="cart-table__clear-button">
-                <button className="cart__clear-button" onClick={clearCartClickHandler}>
+                <button className="cart__clear-button" onClick={clearCartHandler}>
                   Clear
                 </button>
               </td>
             </tr>
           </tbody>
         </table>
-        <button className="cart__buy-button" onClick={() => {}}>
+        <button className="cart__buy-button" onClick={placeAnOrderQuery}>
           place an order
         </button>
       </div>
