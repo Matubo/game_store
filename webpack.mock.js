@@ -84,6 +84,10 @@ function setOrder(req, res) {
       break;
     }
   }
+  if (!result.status) {
+    users_order.push({ username, orders: [{ id: 1, date: getCurrentDate(), order }] });
+    result = { status: true };
+  }
   return result.status
     ? res.status(200).json({ message: 'Order added' })
     : res.status(400).json({ message: 'Something went wrong' });
