@@ -10,11 +10,23 @@ import { ChangeUserDataQueryParams } from 'src/types/queries/ChangeUserDataQuery
 import { useDebounce } from 'src/hooks/useDebounce';
 import { CreateUserQueryParams } from 'src/types/queries/CreateUserQuery';
 import OrdersList from 'src/components/OrdersList/OrdersList';
+import { useEffect, useState } from 'react';
 
 export default function UserPage() {
   const dispatch = useAppDispatch();
-  const user = useTypedSelector((state) => state.user);
-  const { loggin, changeUserData, createUser } = APIURL;
+  const { username, avatar, description, name, login } = useTypedSelector((state) => state.user);
+  const { loggin, changeUserData, createUser, getOrders } = APIURL;
+
+  const [ordersState, setOrdersState] = useState([]);
+
+  useEffect(() => {
+    return () => {
+      if (login)
+        axios.post(getOrders, { username }).then((result) => {
+          setOrdersState(result.data);
+        });
+    };
+  }, [login]);
 
   const loginWithDebounce = useDebounce(({ username, password }: LoginQueryParams) => {
     axios
@@ -28,7 +40,7 @@ export default function UserPage() {
 
   const changeUserDataWithDebounce = useDebounce((data: ChangeUserDataQueryParams) => {
     axios
-      .post(changeUserData, { username: user.username, ...data })
+      .post(changeUserData, { username, ...data })
       .then((result) => {
         dispatch(setUserData({ ...result.data }));
         alert('Данные обновлены');
@@ -49,15 +61,20 @@ export default function UserPage() {
         alert(result.response.data.message);
       });
   }, 700);
+
   const logoutHandler = () => {
     dispatch(deleteUserFromLocalStorage());
   };
+
   console.log('Test');
-  return user.login ? (
+  return login ? (
     <>
-      <UserInformation changeUserData={changeUserDataWithDebounce} userData={user}></UserInformation>
+      <UserInformation
+        changeUserData={changeUserDataWithDebounce}
+        userData={{ username, avatar, description, name }}
+      ></UserInformation>
       <button onClick={logoutHandler}>logout</button>
-      <OrdersList username={user.username}></OrdersList>
+      <OrdersList orders={ordersState}></OrdersList>
     </>
   ) : (
     <LoginForm loginQuery={loginWithDebounce} signupQuery={signupWithDebounce}></LoginForm>

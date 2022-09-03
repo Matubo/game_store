@@ -7,7 +7,10 @@ const user = 'user';
 
 const initialState = {
   login: false,
-  username: ''
+  username: '',
+  avatar: '',
+  description: '',
+  name: ''
 };
 
 const writeUserToLocalStorage = createAsyncThunk(

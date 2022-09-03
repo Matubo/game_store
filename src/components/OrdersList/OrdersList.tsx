@@ -3,27 +3,15 @@ import React, { useEffect, useState } from 'react';
 import { APIURL } from 'src/consts/APIURL';
 import err_img from '../../assets/img/error_img/no_image_avaliable.jpg';
 interface IProps {
-  username: string;
+  orders: {
+    id: number;
+    username: string;
+    date: string;
+    order: { name: string; amount: string; price: string; image: string; id: number }[];
+  }[];
 }
 
-export default function OrdersList({ username }: IProps) {
-  const { getOrders } = APIURL;
-  const [ordersState, setOrdersState] = useState([]);
-
-  useEffect(() => {
-    return () => {
-      axios
-        .post(getOrders, { username })
-        .then((result) => {
-          setOrdersState(result.data);
-          console.log(result.data);
-        })
-        .catch((result) => {
-          alert(result.response.data.message);
-        });
-    };
-  }, []);
-
+export default function OrdersList({ orders }: IProps) {
   const imgErrorHandler = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     e.preventDefault();
     e.currentTarget.src = err_img;
@@ -48,7 +36,7 @@ export default function OrdersList({ username }: IProps) {
     );
   };
 
-  return (
+  return orders.length > 0 ? (
     <div>
       <table>
         <thead>
@@ -60,7 +48,7 @@ export default function OrdersList({ username }: IProps) {
           </tr>
         </thead>
         <tbody>
-          {ordersState.map((elem) => {
+          {orders.map((elem) => {
             return (
               <>
                 <tr key={elem.id}>
@@ -75,5 +63,7 @@ export default function OrdersList({ username }: IProps) {
         </tbody>
       </table>
     </div>
+  ) : (
+    <></>
   );
 }

@@ -6,7 +6,7 @@ import defaultImg from '../../assets/img/default_profile.png';
 
 interface IProps {
   changeUserData: (data: ChangeUserDataQueryParams) => void;
-  userData: IUser;
+  userData: { avatar: string; description: string; name: string; username: string };
 }
 
 export default function UserInformation({ changeUserData, userData }: IProps) {
