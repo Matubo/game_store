@@ -1,4 +1,7 @@
 const top_games = require('./data/top_games.json');
+const users = require('./data/users.json');
+const games = require('./data/games.json');
+const orders = require('./data/users_orders.json');
 const getGame = require('./mock_methods/getGame');
 const setOrder = require('./mock_methods/setOrder');
 const getOrders = require('./mock_methods/getOrders');
@@ -15,12 +18,12 @@ module.exports = proxy = {
     }
   },
   listeners: {},
-  'GET /games': getGame,
+  'GET /games': getGame(games),
   'GET /top-games': top_games,
-  'POST /loggin': loggin,
-  'POST /change-user-data': changeUserData,
-  'POST /get-orders': getOrders,
-  'POST /set-order': setOrder,
-  'POST /create-user': createUser,
-  'POST /get-used-user': logginByLocalStorage
+  'POST /loggin': loggin(users),
+  'POST /change-user-data': changeUserData(users),
+  'POST /get-orders': getOrders(orders),
+  'POST /set-order': setOrder(orders),
+  'POST /create-user': createUser(users),
+  'POST /get-used-user': logginByLocalStorage(users)
 };

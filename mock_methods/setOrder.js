@@ -1,7 +1,6 @@
-const users_orders = require('../data/users_orders.json');
 const getCurrentDate = require('./handlers/getCurrentDate');
 
-module.exports = function setOrder(req, res) {
+module.exports = (users_orders) => (req, res) => {
   const { username, order } = req.body;
   let result = { status: false };
   for (let i = 0; i < users_orders.length; i++) {

@@ -1,6 +1,4 @@
-const games = require('../data/games.json');
-
-module.exports = function getGameHandler(req, res) {
+module.exports = (games) => (req, res) => {
   const { name, ageLimit, rating, genre, platforms } = req.query;
   let matchGames = games;
   if (platforms && matchGames.length > 0) {

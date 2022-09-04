@@ -1,6 +1,4 @@
-const users_orders = require('../data/users_orders.json');
-
-module.export = function getOrders(req, res) {
+module.exports = (users_orders) => (req, res) => {
   const { username } = req.body;
   let result = { status: false };
   for (let i = 0; i < users_orders.length; i++) {

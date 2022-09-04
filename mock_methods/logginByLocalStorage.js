@@ -1,6 +1,4 @@
-const users = require('../data/users.json');
-
-module.exports = function logginByLocalStorage(req, res) {
+module.exports = (users) => (req, res) => {
   const { username } = req.body;
   let result = { status: false };
   for (let i = 0; i < users.length; i++) {

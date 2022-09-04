@@ -1,6 +1,4 @@
-const users = require('../data/users.json');
-
-module.exports = function createUser(req, res) {
+module.exports = (users) => (req, res) => {
   const { username, password } = req.body;
   const user = users.find((user) => user.username == username);
   if (user == undefined) {

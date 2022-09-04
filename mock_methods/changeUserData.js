@@ -1,6 +1,4 @@
-const users = require('../data/users.json');
-
-module.export = function changeUserData(req, res) {
+module.exports = (users) => (req, res) => {
   const { username, avatar, name, description } = req.body;
   let result = { status: false };
   for (let i = 0; i < users.length; i++) {
