@@ -20,11 +20,29 @@ export default function UserPage() {
   const [ordersState, setOrdersState] = useState([]);
 
   useEffect(() => {
-    return () => {
-      if (login)
-        axios.post(getOrders, { username }).then((result) => {
+    if (login) {
+      axios
+        .post(getOrders, { username })
+        .then((result) => {
           setOrdersState(result.data);
+          console.log('order');
+        })
+        .catch((result) => {
+          console.log(result);
         });
+    }
+    return () => {
+      if (login) {
+        axios
+          .post(getOrders, { username })
+          .then((result) => {
+            setOrdersState(result.data);
+            console.log('order');
+          })
+          .catch((result) => {
+            console.log(result);
+          });
+      }
     };
   }, [login]);
 
@@ -65,8 +83,6 @@ export default function UserPage() {
   const logoutHandler = () => {
     dispatch(deleteUserFromLocalStorage());
   };
-
-  console.log('Test');
   return login ? (
     <>
       <UserInformation
