@@ -1,6 +1,7 @@
 .user-information {
   width: 100vw;
   padding-top: 5px;
+  margin-bottom: 10px;
   input {
     transition-duration: 0.5s;
   }
@@ -9,9 +10,29 @@
     color: white;
     transition-duration: 0.5s;
   }
+  p {
+    margin-left: 1%;
+  }
+  button {
+    cursor: pointer;
+    margin: 5px;
+    display: inline-block;
+    background-color: #313131;
+    color: #f2f2f2;
+    font-family: 'Silkscreen';
+    font-weight: bold;
+    padding: 4px 10px;
+  }
+  button:active {
+    background-color: #181818;
+  }
+  button:hover {
+    background-color: #222222;
+  }
 }
 .main-data__profile-pic {
   margin-bottom: 5px;
+  flex-grow: 1;
 }
 .user-information__main-data {
   display: flex;
@@ -19,6 +40,10 @@
   flex-wrap: wrap;
   justify-content: space-around;
   border-bottom: 2px solid rgb(97, 97, 97);
+  padding-bottom: 5px;
+}
+.main-data__profile-data {
+  flex-grow: 2;
 }
 .profile-data__heading {
   font-size: larger;
@@ -101,8 +126,11 @@
   cursor: auto;
 }
 
+.user-information__bio-heading {
+  margin-left: 1%;
+}
 .user-information__bio-text {
-  width: 98%;
+  width: 97%;
   margin: 1%;
   box-sizing: border-box;
   min-height: 150px;
@@ -115,4 +143,8 @@
 .user-information__bio-text:disabled {
   background-color: rgba(0, 0, 0, 0);
   color: white;
+}
+.profile-data__change-button {
+  margin-left: 1%;
+  width: 90px;
 }

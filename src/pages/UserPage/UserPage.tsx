@@ -53,16 +53,20 @@ export default function UserPage() {
   const logoutHandler = () => {
     dispatch(deleteUserFromLocalStorage());
   };
-  return login ? (
-    <>
-      <UserInformation
-        changeUserData={changeUserDataWithDebounce}
-        userData={{ username, avatar, description, name }}
-      ></UserInformation>
-      <button onClick={logoutHandler}>logout</button>
-      <OrdersList username={username} login={login}></OrdersList>
-    </>
-  ) : (
-    <LoginForm loginQuery={loginWithDebounce} signupQuery={signupWithDebounce}></LoginForm>
+  return (
+    <div className="user-page">
+      {login ? (
+        <>
+          <UserInformation
+            changeUserData={changeUserDataWithDebounce}
+            logout={logoutHandler}
+            userData={{ username, avatar, description, name }}
+          ></UserInformation>
+          <OrdersList username={username} login={login}></OrdersList>
+        </>
+      ) : (
+        <LoginForm loginQuery={loginWithDebounce} signupQuery={signupWithDebounce}></LoginForm>
+      )}
+    </div>
   );
 }

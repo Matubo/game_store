@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { ChangeUserDataQueryParams } from 'src/types/queries/ChangeUserDataQuery';
-import { IUser } from 'src/types/redux/user';
 import './UserInformation.scss';
 import defaultImg from '../../assets/img/default_profile.png';
 
 interface IProps {
   changeUserData: (data: ChangeUserDataQueryParams) => void;
+  logout: () => void;
   userData: { avatar: string; description: string; name: string; username: string };
 }
 
-export default function UserInformation({ changeUserData, userData }: IProps) {
+export default function UserInformation({ changeUserData, userData, logout }: IProps) {
   const { avatar, description, name, username } = userData;
   const [disabled, setDisabledStatus] = useState(true);
   const [bioState, setBioState] = useState({ avatar, description, name });
@@ -89,16 +89,28 @@ export default function UserInformation({ changeUserData, userData }: IProps) {
             disabled={disabled}
             onChange={changeNameHandler}
           ></input>
+          <p className="user-information__bio-heading">Your bio : </p>
+          <textarea
+            className="user-information__bio-text"
+            value={bioState.description}
+            disabled={disabled}
+            onChange={changeDescriptionHandler}
+          ></textarea>
+          <button onClick={changeActive} className="profile-data__change-button">
+            {disabled ? 'edit' : 'save'}
+          </button>
+          <button onClick={logout} className="profile-data__logout-button">
+            logout
+          </button>
         </div>
       </div>
-      <p className="user-information__bio-heading">Your bio : </p>
+      {/*       <p className="user-information__bio-heading">Your bio : </p>
       <textarea
         className="user-information__bio-text"
         value={bioState.description}
         disabled={disabled}
         onChange={changeDescriptionHandler}
-      ></textarea>
-      <button onClick={changeActive}>{disabled ? 'edit' : 'set'}</button>
+      ></textarea> */}
     </div>
   );
 }

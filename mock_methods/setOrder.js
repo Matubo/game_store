@@ -6,7 +6,7 @@ module.exports = (users_orders) => (req, res) => {
   for (let i = 0; i < users_orders.length; i++) {
     if (users_orders[i].username == username) {
       let newId = users_orders[i].orders.length;
-      users_orders[i].orders.push({ id: newId, date: getCurrentDate(), order });
+      users_orders[i].orders.unshift({ id: newId, date: getCurrentDate(), order });
       result = { status: true };
       break;
     }
