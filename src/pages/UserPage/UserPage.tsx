@@ -10,41 +10,11 @@ import { ChangeUserDataQueryParams } from 'src/types/queries/ChangeUserDataQuery
 import { useDebounce } from 'src/hooks/useDebounce';
 import { CreateUserQueryParams } from 'src/types/queries/CreateUserQuery';
 import OrdersList from 'src/components/OrdersList/OrdersList';
-import { useEffect, useState } from 'react';
 
 export default function UserPage() {
   const dispatch = useAppDispatch();
   const { username, avatar, description, name, login } = useTypedSelector((state) => state.user);
-  const { loggin, changeUserData, createUser, getOrders } = APIURL;
-
-  const [ordersState, setOrdersState] = useState([]);
-
-  useEffect(() => {
-    if (login) {
-      axios
-        .post(getOrders, { username })
-        .then((result) => {
-          setOrdersState(result.data);
-          console.log('order');
-        })
-        .catch((result) => {
-          console.log(result);
-        });
-    }
-    return () => {
-      if (login) {
-        axios
-          .post(getOrders, { username })
-          .then((result) => {
-            setOrdersState(result.data);
-            console.log('order');
-          })
-          .catch((result) => {
-            console.log(result);
-          });
-      }
-    };
-  }, [login]);
+  const { loggin, changeUserData, createUser } = APIURL;
 
   const loginWithDebounce = useDebounce(({ username, password }: LoginQueryParams) => {
     axios
@@ -90,7 +60,7 @@ export default function UserPage() {
         userData={{ username, avatar, description, name }}
       ></UserInformation>
       <button onClick={logoutHandler}>logout</button>
-      <OrdersList orders={ordersState}></OrdersList>
+      <OrdersList username={username} login={login}></OrdersList>
     </>
   ) : (
     <LoginForm loginQuery={loginWithDebounce} signupQuery={signupWithDebounce}></LoginForm>

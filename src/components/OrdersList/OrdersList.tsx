@@ -1,42 +1,34 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { APIURL } from 'src/consts/APIURL';
-import err_img from '../../assets/img/error_img/no_image_avaliable.jpg';
+import { IOrderElem } from 'src/types/query_result/OrgerResult';
+import OrderListElem from './OrderListElem';
 interface IProps {
-  orders: {
-    id: number;
-    username: string;
-    date: string;
-    order: { name: string; amount: string; price: string; image: string; id: number }[];
-  }[];
+  username: string;
+  login: boolean;
 }
 
-export default function OrdersList({ orders }: IProps) {
-  const imgErrorHandler = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    e.preventDefault();
-    e.currentTarget.src = err_img;
-  };
+export default function OrdersList({ username, login }: IProps) {
+  const [ordersState, setOrdersState] = useState([]);
+  const { getOrders } = APIURL;
 
-  const getOrderDOM = (elem: { name: string; amount: string; price: string; image: string; id: number }) => {
-    console.log(elem);
-    return (
-      <tr key={elem.id}>
-        <td className="cart-tale__img-container">
-          <img
-            className="img-container__img"
-            style={{ width: '50px' }}
-            src={elem.image}
-            onError={imgErrorHandler}
-          ></img>
-        </td>
-        <td>{elem.name}</td>
-        <td>{elem.amount}</td>
-        <td>{elem.price}</td>
-      </tr>
-    );
-  };
+  useEffect(() => {
+    return () => {
+      if (login == true) {
+        axios
+          .post(getOrders, { username })
+          .then((result) => {
+            setOrdersState(result.data);
+            console.log('order');
+          })
+          .catch((result) => {
+            console.log(result);
+          });
+      }
+    };
+  }, []);
 
-  return orders.length > 0 ? (
+  return ordersState.length > 0 ? (
     <div>
       <table>
         <thead>
@@ -48,14 +40,14 @@ export default function OrdersList({ orders }: IProps) {
           </tr>
         </thead>
         <tbody>
-          {orders.map((elem) => {
+          {ordersState.map((elem) => {
             return (
               <>
                 <tr key={elem.id}>
                   order {elem.id} {elem.date}
                 </tr>
-                {elem.order.map((elem: { name: string; amount: string; price: string; image: string; id: number }) => {
-                  return getOrderDOM(elem);
+                {elem.order.map((elem: IOrderElem) => {
+                  return <OrderListElem key={elem.id} {...elem} />;
                 })}
               </>
             );
