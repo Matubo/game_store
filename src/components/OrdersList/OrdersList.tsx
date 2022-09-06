@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { APIURL } from 'src/consts/APIURL';
 import { IOrderElem } from 'src/types/query_result/OrgerResult';
 import OrderListElem from './OrderListElem';
+import './OrderList.scss';
+
 interface IProps {
   username: string;
   login: boolean;
@@ -29,32 +31,41 @@ export default function OrdersList({ username, login }: IProps) {
   }, []);
 
   return ordersState.length > 0 ? (
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <td>img</td>
-            <td>name</td>
-            <td>amount</td>
-            <td>price</td>
-          </tr>
-        </thead>
-        <tbody>
-          {ordersState.map((elem) => {
-            return (
-              <>
-                <tr key={elem.id}>
-                  order {elem.id} {elem.date}
-                </tr>
-                {elem.order.map((elem: IOrderElem) => {
-                  return <OrderListElem key={elem.id} {...elem} />;
-                })}
-              </>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+    <>
+      <p className="orders-heading">Orders</p>
+      <div className="orders">
+        <table className="orders__table">
+          <thead>
+            <tr>
+              <td>img</td>
+              <td>name</td>
+              <td>amount</td>
+              <td>price</td>
+            </tr>
+          </thead>
+          <tbody>
+            {ordersState.map((elem) => {
+              return (
+                <>
+                  <tr className="table__order-info">
+                    <td colSpan={2}>
+                      Order #{elem.id}
+                      <br></br>
+                      {elem.date}
+                    </td>
+                    <td>{elem.amount}</td>
+                    <td>{elem.total}</td>
+                  </tr>
+                  {elem.order.map((elem: IOrderElem) => {
+                    return <OrderListElem key={elem.id} {...elem} />;
+                  })}
+                </>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </>
   ) : (
     <></>
   );

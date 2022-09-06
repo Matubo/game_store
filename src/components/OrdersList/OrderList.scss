@@ -1,0 +1,33 @@
+.orders-heading {
+  font-size: larger;
+  margin-left: 1%;
+}
+.orders__table {
+  width: 100%;
+  margin-top: 20px;
+  max-width: 100vw;
+  text-align: center;
+  td {
+    height: 100%;
+    padding: 0;
+    background-color: #6b6b6b;
+  }
+}
+.table__order-info {
+  font-family: 'Silkscreen', 'Pixel Times';
+  font-size: larger;
+  td {
+    background-color: #4d4d4d;
+  }
+}
+
+.cart-tale__img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-container__img {
+  max-height: 50px;
+  margin: 2px;
+}
