@@ -56,7 +56,7 @@ export default function CartPage() {
             {cartItems.map((elem, i) => {
               return (
                 <tr key={elem.id}>
-                  <td className="cart-tale__img-container">
+                  <td className="cart-table__img-container">
                     <img className="img-container__img" src={elem.image} onError={imgErrorHandler}></img>
                   </td>
                   <td>{elem.name}</td>
