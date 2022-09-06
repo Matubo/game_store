@@ -4,14 +4,16 @@ import { decreaseItemQuantity, clearCart } from 'src/redux/reducers/cartReducer'
 import { APIURL } from 'src/consts/APIURL';
 import err_img from '../../assets/img/error_img/no_image_avaliable.jpg';
 import './CartPage.scss';
-import { ICartItem } from 'src/types/redux/cart';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { routesURL } from 'src/consts/routesURL';
 
 export default function CartPage() {
   const dispatch = useAppDispatch();
   const { cartItems, totalPrice, totalQuantity } = useTypedSelector((state) => state.cart);
-  const { username } = useTypedSelector((state) => state.user);
+  const { username, login } = useTypedSelector((state) => state.user);
   const { setOrder } = APIURL;
+  const { user } = routesURL;
 
   const placeAnOrderQuery = () => {
     axios
@@ -86,9 +88,15 @@ export default function CartPage() {
             </tr>
           </tbody>
         </table>
-        <button className="cart__buy-button" onClick={placeAnOrderQuery}>
-          place an order
-        </button>
+        {login ? (
+          <button className="cart__buy-button" onClick={placeAnOrderQuery}>
+            place an order
+          </button>
+        ) : (
+          <Link to={user}>
+            <button className="cart__buy-button">place an order</button>
+          </Link>
+        )}
       </div>
     );
 
