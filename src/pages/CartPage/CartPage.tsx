@@ -7,6 +7,7 @@ import './CartPage.scss';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { routesURL } from 'src/consts/routesURL';
+import { useRef } from 'react';
 
 export default function CartPage() {
   const dispatch = useAppDispatch();
@@ -52,11 +53,11 @@ export default function CartPage() {
               <th>-</th>
             </tr>
           </thead>
-          <tbody className="cart-table__body">
-            {cartItems.map((elem, i) => {
+          <tbody className="cart-table__game-list">
+            {cartItems.map((elem) => {
               return (
-                <tr key={elem.id}>
-                  <td className="cart-table__img-container">
+                <tr key={elem.id} className="game-list__elem">
+                  <td className="game-list__img-container">
                     <img className="img-container__img" src={elem.image} onError={imgErrorHandler}></img>
                   </td>
                   <td>{elem.name}</td>
@@ -64,7 +65,7 @@ export default function CartPage() {
                   <td>{elem.price}</td>
                   <td>
                     <button
-                      className="cart-table__subt-button"
+                      className="game-list__subt-button"
                       onClick={() => {
                         decreaseClickHandler(elem.id);
                       }}

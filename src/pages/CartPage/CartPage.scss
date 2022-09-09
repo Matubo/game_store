@@ -9,7 +9,7 @@
   font-weight: bold;
 }
 
-.cart-tale__img-container {
+.game-list__img-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,12 +47,12 @@
   }
 }
 
-.cart-table__subt-button {
+.game-list__subt-button {
   padding: 4px 10px;
   border: 1px solid black;
   border-bottom: 3px solid black;
 }
-.cart-table__subt-button:active {
+.game-list__subt-button:active {
   border-bottom: 1px solid black;
   margin-top: 2px;
   text-decoration: none;

@@ -30,6 +30,10 @@ export default function OrdersList({ username, login }: IProps) {
     };
   }, []);
 
+  function test() {
+    console.log('test');
+  }
+
   return ordersState.length > 0 ? (
     <>
       <p className="orders-heading">Orders</p>
@@ -47,7 +51,12 @@ export default function OrdersList({ username, login }: IProps) {
             {ordersState.map((elem) => {
               return (
                 <>
-                  <tr className="table__order-info">
+                  <tr
+                    className="table__order-info"
+                    onClick={() => {
+                      test();
+                    }}
+                  >
                     <td colSpan={2}>
                       Order #{elem.id}
                       <br></br>

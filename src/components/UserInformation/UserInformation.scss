@@ -33,6 +33,7 @@
 .main-data__profile-pic {
   margin-bottom: 5px;
   flex-grow: 1;
+  align-self: center;
 }
 .user-information__main-data {
   display: flex;
@@ -122,8 +123,9 @@
 }
 
 .input__wrapper-disabled .input__file-button {
-  background: #3f376e;
+  background: rgb(51, 51, 51);
   cursor: auto;
+  color: #181818;
 }
 
 .user-information__bio-heading {
