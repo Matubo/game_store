@@ -2,6 +2,7 @@
   font-size: larger;
   margin-left: 1%;
 }
+
 .orders__table {
   width: 100%;
   margin-top: 20px;
@@ -19,4 +20,13 @@
   td {
     background-color: #4d4d4d;
   }
+}
+.order-thead__img {
+  width: 70px;
+}
+.order-thead__amount {
+  width: 60px;
+}
+.order-thead__price {
+  width: 110px;
 }

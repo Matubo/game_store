@@ -1,10 +1,12 @@
+.product-row {
+  display: none;
+}
 .product-row__img-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  vertical-align: middle;
 }
 
 .img-container__img {
   height: 50px;
-  margin: 2px;
+  vertical-align: middle;
+  margin: 5px;
 }

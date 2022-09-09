@@ -104,13 +104,6 @@ export default function UserInformation({ changeUserData, userData, logout }: IP
           </button>
         </div>
       </div>
-      {/*       <p className="user-information__bio-heading">Your bio : </p>
-      <textarea
-        className="user-information__bio-text"
-        value={bioState.description}
-        disabled={disabled}
-        onChange={changeDescriptionHandler}
-      ></textarea> */}
     </div>
   );
 }

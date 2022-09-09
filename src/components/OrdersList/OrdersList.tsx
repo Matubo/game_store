@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { APIURL } from 'src/consts/APIURL';
 import { IOrderElem } from 'src/types/query_result/OrgerResult';
 import OrderListElem from './OrderListElem';
@@ -30,31 +30,42 @@ export default function OrdersList({ username, login }: IProps) {
     };
   }, []);
 
-  function test() {
-    console.log('test');
-  }
+  const tableRef = useRef(null);
+
+  const orderClickHandler = (orderId: number) => {
+    const elements = tableRef.current.querySelectorAll(`[data-order-id=n${orderId}]`);
+    if (elements[0].style.display == 'table-row') {
+      elements.forEach((elem: HTMLElement) => {
+        elem.style.display = 'none';
+      });
+    } else {
+      elements.forEach((elem: HTMLElement) => {
+        elem.style.display = 'table-row';
+      });
+    }
+  };
 
   return ordersState.length > 0 ? (
     <>
       <p className="orders-heading">Orders</p>
       <div className="orders">
         <table className="orders__table">
-          <thead>
+          <thead className="order-thead">
             <tr>
-              <td>img</td>
-              <td>name</td>
-              <td>amount</td>
-              <td>price</td>
+              <td className="order-thead__img">img</td>
+              <td className="order-thead__name">name</td>
+              <td className="order-thead__amount">amount</td>
+              <td className="order-thead__price">price</td>
             </tr>
           </thead>
-          <tbody>
+          <tbody ref={tableRef}>
             {ordersState.map((elem) => {
               return (
                 <>
                   <tr
                     className="table__order-info"
                     onClick={() => {
-                      test();
+                      orderClickHandler(elem.id);
                     }}
                   >
                     <td colSpan={2}>
@@ -65,8 +76,8 @@ export default function OrdersList({ username, login }: IProps) {
                     <td>{elem.amount}</td>
                     <td>{elem.total}</td>
                   </tr>
-                  {elem.order.map((elem: IOrderElem) => {
-                    return <OrderListElem key={elem.id} {...elem} />;
+                  {elem.order.map((gameElem: IOrderElem) => {
+                    return <OrderListElem key={gameElem.id} orderId={elem.id} {...gameElem} />;
                   })}
                 </>
               );
