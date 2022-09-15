@@ -16,7 +16,7 @@ export default function Header() {
     <div className="navbar-header">
       <Link to={home} className="navbar-header__main-logo main-logo">
         <img src={header_logo} alt="logo" className="main-logo__img"></img>
-        <p className="main-logo__text">Games mmm...</p>
+        <p className="main-logo__text">All games</p>
       </Link>
       <HeaderListElem link={home} text="home"></HeaderListElem>
       <HeaderDropdownListElem text="category" elements={categories}></HeaderDropdownListElem>

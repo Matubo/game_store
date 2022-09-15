@@ -1,0 +1,16 @@
+.error-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+  max-height: 80vh;
+}
+.error-page__img {
+  max-width: 100%;
+}
+.error-page__text {
+  font-size: xx-large;
+  font-weight: bolder;
+}

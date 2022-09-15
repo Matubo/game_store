@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
+import Footer from 'src/components/Footer/Footer';
 import Header from 'src/components/Header/Header';
 import { APIURL } from 'src/consts/APIURL';
 import { useAppDispatch } from 'src/hooks/useTypedDispatch';
@@ -35,10 +36,10 @@ export default function MineTemplate({ children }: PropTypes) {
   }, []);
 
   return (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', justifyContent: 'flex-start' }}>
       <Header></Header>
       {children}
-      <p>Footer</p>
-    </>
+      <Footer></Footer>
+    </div>
   );
 }
