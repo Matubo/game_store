@@ -1,11 +1,15 @@
+function replace(str) {
+  return str.replace(/[\s{2,}]+/g, ' ');
+}
+
 module.exports = (users) => (req, res) => {
-  const { username, avatar, name, description } = req.body;
+  let { username, avatar, name, description } = req.body;
   let result = { status: false };
   for (let i = 0; i < users.length; i++) {
-    if (users[i].username == username) {
+    if (users[i].username == replace(username)) {
       users[i].avatar = avatar;
-      users[i].name = name;
-      users[i].description = description;
+      users[i].name = replace(name);
+      users[i].description = replace(description);
       result = { status: true, user: users[i] };
       break;
     }
