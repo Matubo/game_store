@@ -9,6 +9,7 @@ const loggin = require('./mock_methods/loggin');
 const logginByLocalStorage = require('./mock_methods/logginByLocalStorage');
 const changeUserData = require('./mock_methods/changeUserData');
 const createUser = require('./mock_methods/createUser');
+const reviews = require('./data/reviews.json');
 
 module.exports = proxy = {
   changeHost: true,
@@ -25,5 +26,6 @@ module.exports = proxy = {
   'POST /get-orders': getOrders(orders),
   'POST /set-order': setOrder(orders),
   'POST /create-user': createUser(users),
-  'POST /get-used-user': logginByLocalStorage(users)
+  'POST /get-used-user': logginByLocalStorage(users),
+  'GET /user_reviews': reviews
 };

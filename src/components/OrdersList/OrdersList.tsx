@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useRef, useState } from 'react';
 import { APIURL } from 'src/consts/APIURL';
-import { IOrderElem } from 'src/types/query_result/OrgerResult';
+import { IOrderElem } from 'src/types/OrderElem';
 import OrderListElem from './OrderListElem';
 import './OrderList.scss';
 

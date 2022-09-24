@@ -1,3 +1,3 @@
-import { IGameCard } from '../gameCard';
+import { IGameCard } from './gameCard';
 
 export type IOrderElem = IGameCard & { amount: number };

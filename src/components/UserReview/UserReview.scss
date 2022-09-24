@@ -1,0 +1,40 @@
+.reviews {
+  width: 100vw;
+}
+.reviews__review-card {
+  padding: 15px;
+  position: absolute;
+  visibility: hidden;
+  box-sizing: border-box;
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  background-color: rgba(128, 128, 128, 0.616);
+  border-radius: 20px 20px;
+}
+.reviews-card__name {
+  margin-top: 0;
+  font-size: large;
+  font-weight: bold;
+}
+.reviews-card__reviews-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.reviews-card__raiting {
+  position: absolute;
+  background-color: rgb(0 0 0 / 63%);
+  z-index: 10000;
+  padding: 2px;
+}
+.reviews-card__img {
+  height: 150px;
+}
+.reviews-card__genre {
+}
+.reviews-card__description {
+  word-wrap: break-word;
+}

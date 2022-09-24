@@ -1,0 +1,51 @@
+[       {
+    "id": 1,
+    "name": "Cult of the Lamb",
+    "rating": 4,
+    "genre": "Indie",
+    "platform": { "pc": true, "playstation": true, "xbox": true },
+    "image": "https://static-cdn.jtvnw.net/ttv-boxart/516173984_IGDB-285x380.jpg",
+    "description": "* Get a bunch of cult members * Make them work 96 hours/week by using rituals \n*Establish tax system by using rituals \n* Drug your members with shrооms to suppress any discontent \n*Make your members hate old people \n* Slaughter/sacrifice/butcher all members once they get old \n*Resurrect slaughtered old members to make them young again \n*Make them work 96 hours/week..... again ! \n*Make them pay taxes.....again!",
+    "alt": "Cult of the Lamb"
+  },
+    {
+      "id": 2,
+      "name": "The last of Us part I",
+      "rating": 2,
+      "genre": "Shooter",
+      "platform": { "pc": false, "playstation": true, "xbox": false },
+      "image": "https://upload.wikimedia.org/wikipedia/ru/thumb/2/21/The_Last_of_Us_Part_I_-_%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0.png/274px-The_Last_of_Us_Part_I_-_%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0.png",
+      "description": "The same great game we all fell in love with, but now they justify a massive price tag by remastering it for current generations. 70 dollars for a decade old game just because it looks nicer? It's not like the first remaster (yes, there has already been one remaster) is particularly outdated. If you've never played the games before, I guess this is a good buy, but if you're coming from the PS3 game or the PS4 remaster, skip it and do not support this trash.",
+      "alt": "The lust of Us part I"
+    },
+      {
+        "id": 3,
+        "name": "TINYKIN",
+        "rating": 5,
+        "genre": "Indie",
+        "platform": { "pc": true, "playstation": true, "xbox": true },
+        "image": "https://thumbnails.pcgamingwiki.com/3/31/Tinykin_cover.jpg/300px-Tinykin_cover.jpg",
+        "description": "What an awesome little game. Just a really chill game to play full of bright puzzles and really simple puzzles. I think the sequel could improve by making the puzzles a little more challenging but I hope they keep it free of enemies, it's nice just sliding around on my soap without a care in the world",
+        "alt": "TINYKIN"
+      },
+      {
+        "id": 4,
+        "name": "PAC-MAN WORLD: RE-PAC",
+        "rating": 5,
+        "genre": "Arcade",
+        "platform": { "pc": true, "playstation": true, "xbox": true },
+        "image": "https://static.wikia.nocookie.net/pacman/images/e/e3/Pacman-world-repac-cover-artwork.png",
+        "description": "booooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooom",
+        "alt": "PAC-MAN WORLD: RE-PAC"
+      },
+      {
+        "id": 5,
+        "name": "CUPHEAD IN THE DELICIOUS LAST COURSE",
+        "rating": 4,
+        "genre": "Shoot'em up",
+        "platform": { "pc": true, "playstation": true, "xbox": true },
+        "image": "https://cdn.kanobu.ru/games/e93d6ebf-456f-4da2-8ba2-1f19b0cd3f48.png",
+        "description": "It's the Dlc we have been looking for.The art style is still pretty good and I like the new approach of colors they have used.The dlc is more of cuphead that we liked and it's a good things.there are some improvements like the animation has become much more alive that you feel it would pop outta the screen also the parry challenges are so fun to play and it's a better and rewarding way they chose to get coins.One thing I didn't like much is that the random design of boss battles has noticeably increased to a degree that can be annoying and not fair although the fun in the gamplay is still the same and what we have been familiar with.and that's all I can say about this wonderful dlc.",
+        "alt": "CUPHEAD IN THE DELICIOUS LAST COURSE"
+      }
+]

@@ -15,6 +15,7 @@ export default function ProguctsPage() {
   const params: string = useParams().platforms;
   const [sort, setSort] = useState({ platforms: [params] });
   const [games, setGames] = useState([]);
+  const [gameCategory, setGameCategory] = useState(params);
   const { search_games } = APIURL;
   const dispatch = useAppDispatch();
 
@@ -22,6 +23,7 @@ export default function ProguctsPage() {
     axios({ method: 'GET', url: search_games, params: sort })
       .then((result) => {
         setGames(result.data);
+        setGameCategory(params);
       })
       .catch((e) => console.error(e));
   };
@@ -47,6 +49,7 @@ export default function ProguctsPage() {
   return (
     <div className="product-page">
       <FilterForm setFilters={setSortParams} params={params}></FilterForm>
+      <p className="product-page__heading">{gameCategory}</p>
       <SearchResult games={games} callback={addToCartHandler}></SearchResult>
     </div>
   );

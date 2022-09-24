@@ -6,5 +6,6 @@ export enum APIURL {
   setOrder = '/set-order',
   createUser = '/create-user',
   changeUserData = '/change-user-data',
-  getUsedUser = '/get-used-user'
+  getUsedUser = '/get-used-user',
+  user_reviews = '/user_reviews'
 }

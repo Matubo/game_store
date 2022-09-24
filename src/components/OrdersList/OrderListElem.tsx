@@ -1,5 +1,5 @@
 import err_img from 'src/assets/img/error_img/no_image_avaliable.jpg';
-import { IOrderElem } from 'src/types/query_result/OrgerResult';
+import { IOrderElem } from 'src/types/OrderElem';
 import './OrderListElem.scss';
 
 export default function OrderListElem({ name, amount, price, image, orderId }: IOrderElem & { orderId: number }) {
