@@ -21,6 +21,7 @@ export default function CartPage() {
       .post(setOrder, { username, order: cartItems })
       .then(() => {
         clearCartHandler();
+        alert('Your order has been confirmed!');
       })
       .catch((result) => {
         alert(result.message);
