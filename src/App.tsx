@@ -14,7 +14,7 @@ export default function App() {
           <Suspense
             fallback={
               <div className="app-loader">
-                <img src={loading}></img>
+                <img src={loading} alt="loading"></img>
               </div>
             }
           >

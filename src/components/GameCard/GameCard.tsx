@@ -25,7 +25,7 @@ export default function CardGame({ game, callback }: IProps) {
       <div className="game-card__front">
         <div className="game-card__rating">{rating}/5&#9733;</div>
         {discount ? <div className="game-card__discount">{discount}%</div> : <></>}
-        <img className="front__img" src={image} onError={imgErrorHandler}></img>
+        <img className="front__img" src={image} onError={imgErrorHandler} alt=""></img>
         <p className="front__name">{name}</p>
       </div>
       <div className="game-card__back">
