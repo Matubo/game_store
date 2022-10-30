@@ -7,7 +7,7 @@ export default function ErrorPage() {
         404 <br />
         This is not <br /> the page you&apos;re <br /> looking for
       </p>
-      <img src={error_obi} className="error-page__img"></img>
+      <img src={error_obi} className="error-page__img" alt="404"></img>
     </div>
   );
 }
