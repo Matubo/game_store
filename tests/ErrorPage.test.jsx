@@ -1,9 +1,9 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import ErrorPage from 'src/pages/ErrorPage/ErrorPage';
 
-it('test', async () => {
-  expect(1).toEqual(1);
-});
 test('snapTest', async () => {
-  const { container, getByText } = render(<ErrorPage></ErrorPage>);
+  render(<ErrorPage></ErrorPage>);
+  screen.debug();
+  const errorMessage = screen.getByText("404 This is not the page you're looking for");
+  expect(errorMessage).toBeInTheDocument();
 });

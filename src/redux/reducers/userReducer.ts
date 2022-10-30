@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import UserActions from 'src/types/redux/actions/userActions';
+import { UserActions } from 'src/types/redux/actions/UserActions';
 import { IUser } from 'src/types/redux/user';
 import { login, logout } from '../../services/auth.service';
 
