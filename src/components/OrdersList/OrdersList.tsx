@@ -21,10 +21,9 @@ export default function OrdersList({ username, login }: IProps) {
           .post(getOrders, { username })
           .then((result) => {
             setOrdersState(result.data);
-            console.log('order');
           })
           .catch((result) => {
-            console.log(result);
+            new Error(result);
           });
       }
     };

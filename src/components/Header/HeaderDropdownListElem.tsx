@@ -19,7 +19,11 @@ export default function HeaderDropdownListElem({ text, elements }: IProps) {
     <div
       className="navbar-header__item dropdown-item"
       onMouseOver={() => setActive(true)}
+      onFocus={() => setActive(true)}
       onMouseOut={() => setActive(false)}
+      onBlur={() => {
+        setActive(false);
+      }}
     >
       <p className="dropdown-item__link">{text}</p>
       {active ? (
@@ -29,7 +33,7 @@ export default function HeaderDropdownListElem({ text, elements }: IProps) {
             return (
               <div className="dropdown-menu__item" key={text}>
                 <Link to={link} key={link} className="dropdown-menu__link">
-                  <img src={iconSrc} className="dropdown-menu__icon"></img>
+                  <img src={iconSrc} className="dropdown-menu__icon" alt=""></img>
                   <p className="dropdown-menu__text">{text}</p>
                 </Link>
               </div>

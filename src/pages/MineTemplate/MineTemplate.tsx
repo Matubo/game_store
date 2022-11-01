@@ -25,10 +25,9 @@ export default function MineTemplate({ children }: PropTypes) {
             const { username } = result.data;
             dispatch(setUserData({ ...result.data }));
             dispatch(writeUserToLocalStorage(username));
-            console.log(result);
           })
           .catch((result) => {
-            console.log(result);
+            new Error(result);
             logout();
           });
       };

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { memo, useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import SearchResult from 'src/components/SerachResult/SearchResult';
 import UserReview from 'src/components/UserReview/UserReview';
 import { APIURL } from 'src/consts/APIURL';
@@ -20,13 +20,13 @@ function HomePage() {
         .then((result) => {
           setGames(result.data);
         })
-        .catch((e) => console.error(e));
+        .catch((e) => new Error(e));
       axios({ method: 'GET', url: user_reviews })
         .then((result) => {
           setReviews(result.data);
         })
         .catch((e) => {
-          console.error(e);
+          new Error(e);
         });
     };
   }, []);

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './NameForm.scss';
 
 interface IProps {
@@ -7,8 +6,6 @@ interface IProps {
 }
 
 export default function NameForm({ onChange, name }: IProps) {
-  const [inputState, setInputState] = useState('');
-
   const onChangeHandler = (value: string) => {
     onChange(value);
   };

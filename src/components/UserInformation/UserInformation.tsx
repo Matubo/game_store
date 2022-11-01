@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ChangeUserDataQueryParams } from 'src/types/queries/ChangeUserDataQuery';
 import './UserInformation.scss';
 import defaultImg from '../../assets/img/default_profile.png';
@@ -13,16 +13,10 @@ export default function UserInformation({ changeUserData, userData, logout }: IP
   const { avatar, description, name, username } = userData;
   const [disabled, setDisabledStatus] = useState(true);
   const [bioState, setBioState] = useState({ avatar, description, name });
-  const uploadImgRef = useRef(null);
 
   const changeActive = () => {
     setDisabledStatus(!disabled);
   };
-
-  useEffect(() => {
-    const node = uploadImgRef.current;
-    console.log(node);
-  });
 
   useEffect(() => {
     if (disabled) {
@@ -61,7 +55,7 @@ export default function UserInformation({ changeUserData, userData, logout }: IP
     <div className="user-information">
       <div className="user-information__main-data">
         <div className="main-data__profile-pic">
-          <img src={bioState.avatar ? bioState.avatar : defaultImg} className="profile-pic__img" />
+          <img src={bioState.avatar ? bioState.avatar : defaultImg} className="profile-pic__img" alt="profile-pic" />
           <div className={`input__wrapper ${disabled ? 'input__wrapper-disabled' : ''}`}>
             <input
               name="file"

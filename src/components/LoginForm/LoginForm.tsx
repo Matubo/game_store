@@ -35,7 +35,7 @@ export default function LoginForm({ loginQuery, signupQuery }: IProps) {
 
   return (
     <div className="login-page">
-      <div className="login-page__login-form login-form" onKeyUp={keyHandler}>
+      <div className="login-page__login-form login-form" onKeyUp={keyHandler} tabIndex={0}>
         <div className="login-form__login-type">
           <h1
             style={singup ? { color: 'black' } : { color: 'white' }}
@@ -43,7 +43,7 @@ export default function LoginForm({ loginQuery, signupQuery }: IProps) {
             className="login-type__login"
           >
             {'<SIGNIN'}
-          </h1>{' '}
+          </h1>
           <h1
             style={singup ? { color: 'white' } : { color: 'black' }}
             onClick={() => setSingup(true)}

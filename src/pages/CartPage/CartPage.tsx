@@ -7,7 +7,6 @@ import './CartPage.scss';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { routesURL } from 'src/consts/routesURL';
-import { useRef } from 'react';
 
 export default function CartPage() {
   const dispatch = useAppDispatch();
@@ -59,7 +58,7 @@ export default function CartPage() {
               return (
                 <tr key={elem.id} className="game-list__elem">
                   <td className="game-list__img-container">
-                    <img className="img-container__img" src={elem.image} onError={imgErrorHandler}></img>
+                    <img className="img-container__img" src={elem.image} onError={imgErrorHandler} alt="game-img"></img>
                   </td>
                   <td>{elem.name}</td>
                   <td>{elem.amount}</td>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Genres } from 'src/consts/filterForm';
 import './GenresForm.scss';
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Ages, Genres, IQueryParams, Rating } from 'src/consts/filterForm';
 import AgeForm from './AgeForm';
 import GenresForm from './GenresForm';

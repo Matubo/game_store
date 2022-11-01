@@ -9,7 +9,7 @@ import './Header.scss';
 import HeaderCartElem from './HeaderCartElem';
 import { routesURL } from 'src/consts/routesURL';
 
-const { cart, category, home, user } = routesURL;
+const { cart, home, user } = routesURL;
 
 export default function Header() {
   return (

@@ -7,6 +7,14 @@
       "jsx": true
     }
   },
+  "overrides": [
+    {
+      // for files matching this pattern
+      "files": ["*.ts", "*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "rules": { "no-unused-vars": "off" }
+    }
+  ],
   "env": {
     "browser": true,
     "node": true,
@@ -19,15 +27,18 @@
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:@typescript-eslint/eslint-recommended",
-    // "plugin:jsx-a11y/recommended", //enable this
+    "plugin:@typescript-eslint/recommended",
+    //"plugin:jsx-a11y/recommended",
     "prettier"
   ],
   "rules": {
-    //"react/react-in-jsx-scope": "off", //this shieeeeeet.......
+    "react/react-in-jsx-scope": "off",
+    "no-var": "error",
     "no-unused-vars": "warn",
-    "no-console": "warn", // Remember, this means error!
+    "@typescript-eslint/no-unused-vars": ["warn"],
+    "no-console": "warn",
     "react/no-unescaped-entities": ["warn"],
-    "no-var": "error"
+    "jsx-a11y/no-noninteractive-tabindex": "off"
   },
   "settings": {
     "react": {

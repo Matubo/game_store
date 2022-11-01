@@ -47,7 +47,7 @@ export default function UserReview({ reviews }: IProps) {
             }
             key={id}
           >
-            <div onClick={nextSlideHandler} className="reviews-card__next-button">
+            <div onClick={nextSlideHandler} className="reviews-card__next-button" tabIndex={0}>
               <p>{'>'}</p>
             </div>
             <div className="reviews-card__reviews-flex">

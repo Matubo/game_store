@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import SearchResult from 'src/components/SerachResult/SearchResult';
 import { APIURL } from 'src/consts/APIURL';
@@ -25,7 +25,7 @@ export default function ProguctsPage() {
         setGames(result.data);
         setGameCategory(params);
       })
-      .catch((e) => console.error(e));
+      .catch((e) => new Error(e));
   };
 
   const getGamesWithDebounce = useDebounce(getGamesWithParams, 700);

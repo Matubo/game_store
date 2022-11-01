@@ -32,7 +32,6 @@ const userReducer = createSlice({
       state: IUser,
       action: PayloadAction<{ name: string; username: string; avatar: string; description: string }>
     ) => {
-      console.log(action.payload);
       const { name, username, avatar, description } = action.payload;
       [state.name, state.username, state.avatar, state.description] = [name, username, avatar, description];
     }

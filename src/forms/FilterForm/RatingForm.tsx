@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Rating } from 'src/consts/filterForm';
 import './RatingForm.scss';
 
