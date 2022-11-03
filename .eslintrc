@@ -13,6 +13,14 @@
       "files": ["*.ts", "*.tsx"],
       "parser": "@typescript-eslint/parser",
       "rules": { "no-unused-vars": "off" }
+    },
+    {
+      "files": ["mock_methods/*.ts", "mock_methods/*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "off"
+      }
     }
   ],
   "env": {
