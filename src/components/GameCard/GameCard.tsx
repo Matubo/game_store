@@ -1,5 +1,5 @@
 import { IGameCard } from 'src/types/gameCard';
-import err_img from '../../assets/img/error_img/no_image_avaliable.jpg';
+
 import './GameCard.scss';
 
 interface IProps {
@@ -7,7 +7,7 @@ interface IProps {
   callback: (elem: IGameCard) => void;
 }
 
-export default function CardGame({ game, callback }: IProps) {
+export default function GameCard({ game, callback }: IProps) {
   const { image, name, price, description, rating, discount } = game;
 
   const clickHandler = (e: React.MouseEvent) => {
@@ -15,17 +15,12 @@ export default function CardGame({ game, callback }: IProps) {
     callback(game);
   };
 
-  const imgErrorHandler = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    e.preventDefault();
-    e.currentTarget.src = err_img;
-  };
-
   return (
     <div className="search-result__game-card game-card">
       <div className="game-card__front">
         <div className="game-card__rating">{rating}/5&#9733;</div>
         {discount ? <div className="game-card__discount">{discount}%</div> : <></>}
-        <img className="front__img" src={image} onError={imgErrorHandler} alt=""></img>
+        <img className="front__img" src={image} alt="game-pic"></img>
         <p className="front__name">{name}</p>
       </div>
       <div className="game-card__back">

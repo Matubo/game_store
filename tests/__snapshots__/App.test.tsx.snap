@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App test snapshot test 1`] = `
+<DocumentFragment>
+  <div
+    class="React-App"
+  >
+    <div
+      style="display: flex; flex-direction: column; min-height: 100vh; justify-content: flex-start;"
+    >
+      <div
+        class="navbar-header"
+      >
+        <a
+          class="navbar-header__main-logo main-logo"
+          href="/"
+        >
+          <img
+            alt="logo"
+            class="main-logo__img"
+            src="[object Object]"
+          />
+          <p
+            class="main-logo__text"
+          >
+            All games
+          </p>
+        </a>
+        <a
+          class="navbar-header__item header-item"
+          href="/"
+        >
+          <p
+            class="header-item__text"
+          >
+            home
+          </p>
+        </a>
+        <div
+          class="navbar-header__item dropdown-item"
+        >
+          <p
+            class="dropdown-item__link"
+          >
+            category
+          </p>
+        </div>
+        <a
+          class="navbar-header__item header-cart"
+          href="/user"
+        >
+          <img
+            alt="cart"
+            class="header-cart__img"
+            src="[object Object]"
+          />
+        </a>
+        <a
+          class="navbar-header__item header-cart"
+          href="/cart"
+        >
+          <img
+            alt="cart"
+            class="header-cart__img"
+            src="[object Object]"
+          />
+        </a>
+      </div>
+      <div
+        class="home-page"
+      >
+        <p
+          class="home-page__heading"
+        >
+          TOP DISCOUNT
+        </p>
+        <div
+          class="search-result"
+        />
+        <p
+          class="home-page__heading"
+        >
+          USER SMALL REVIEW
+        </p>
+        <div
+          class="reviews"
+          style="height: 0px;"
+        />
+      </div>
+      <div
+        class="footer"
+      >
+        <div
+          class="footer__line"
+        />
+        <p
+          class="footer__text"
+        >
+          Evergreen Terrace, 742, Springfield, USA - 555-0113
+          <br />
+          ©2022 "All games"
+        </p>
+      </div>
+    </div>
+    <div
+      class="app-background"
+    />
+  </div>
+</DocumentFragment>
+`;

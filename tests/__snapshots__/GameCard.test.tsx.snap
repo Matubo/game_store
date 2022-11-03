@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameCard tests snapshot test 1`] = `
+<DocumentFragment>
+  <div
+    class="search-result__game-card game-card"
+  >
+    <div
+      class="game-card__front"
+    >
+      <div
+        class="game-card__rating"
+      >
+        4/5★
+      </div>
+      <div
+        class="game-card__discount"
+      >
+        5%
+      </div>
+      <img
+        alt="game-pic"
+        class="front__img"
+        src="/srcTest"
+      />
+      <p
+        class="front__name"
+      >
+        TestGame
+      </p>
+    </div>
+    <div
+      class="game-card__back"
+    >
+      <p
+        class="back__description"
+      >
+        The Greatest test game for test
+      </p>
+      <div
+        class="back__add-panel"
+      >
+        <p
+          class="add-panel__price"
+        >
+          1800 €
+        </p>
+        <button
+          class="add-panel__add-button"
+        >
+          +
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
