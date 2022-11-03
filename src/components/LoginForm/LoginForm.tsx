@@ -1,3 +1,4 @@
+/*eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions*/
 import React, { useState } from 'react';
 import { CreateUserQueryParams } from 'src/types/queries/CreateUserQuery';
 import { LoginQueryParams } from 'src/types/queries/LoginQuery';
@@ -33,21 +34,32 @@ export default function LoginForm({ loginQuery, signupQuery }: IProps) {
       : loginQuery({ username: loginState, password: passwordState });
   };
 
+  const loginKeyPressHandler = (e: React.KeyboardEvent, flag: boolean) => {
+    e.preventDefault;
+    if (e.key == 'Enter') {
+      setSingup(flag);
+    }
+  };
+
   return (
     <div className="login-page">
-      <div className="login-page__login-form login-form" onKeyUp={keyHandler} tabIndex={0}>
+      <div className="login-page__login-form login-form" role="button" onKeyPress={keyHandler} tabIndex={0}>
         <div className="login-form__login-type">
           <h1
             style={singup ? { color: 'black' } : { color: 'white' }}
             onClick={() => setSingup(false)}
+            onKeyPress={(e) => loginKeyPressHandler(e, false)}
             className="login-type__login"
+            tabIndex={0}
           >
             {'<SIGNIN'}
           </h1>
           <h1
             style={singup ? { color: 'white' } : { color: 'black' }}
             onClick={() => setSingup(true)}
+            onKeyPress={(e) => loginKeyPressHandler(e, true)}
             className="login-type__signup"
+            tabIndex={0}
           >
             {'SIGNUP>'}
           </h1>

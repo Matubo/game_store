@@ -35,6 +35,13 @@ export default function UserReview({ reviews }: IProps) {
     currentSlideNum + 1 < reviews.length ? setSlideNum(currentSlideNum + 1) : setSlideNum(0);
   }
 
+  function nextSlideHandlerByKeyboard(e: React.KeyboardEvent) {
+    e.preventDefault();
+    if (e.key == 'Enter') {
+      nextSlideHandler();
+    }
+  }
+
   return (
     <div className="reviews" ref={cardListRef}>
       {reviews.map((review, index) => {
@@ -47,9 +54,6 @@ export default function UserReview({ reviews }: IProps) {
             }
             key={id}
           >
-            <div onClick={nextSlideHandler} className="reviews-card__next-button" tabIndex={0}>
-              <p>{'>'}</p>
-            </div>
             <div className="reviews-card__reviews-flex">
               <div className="reviews-card__raiting">{rating}/5&#9733;</div>
               <img className="reviews-card__img" src={image} alt={alt}></img>
@@ -64,6 +68,15 @@ export default function UserReview({ reviews }: IProps) {
               </div>
             </div>
             <p className="reviews-card__description">{description}</p>
+            <button
+              onClick={nextSlideHandler}
+              onKeyPress={nextSlideHandlerByKeyboard}
+              className="reviews-card__next-button"
+              tabIndex={0}
+              disabled={currentSlideNum == index ? false : true}
+            >
+              <p>{'>'}</p>
+            </button>
           </div>
         );
       })}
