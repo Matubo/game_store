@@ -16,7 +16,7 @@ export default function AgeForm({ onChange, age }: IProps) {
     <div className="age">
       <p className="age__heading">age</p>
       <select className="age__select age-select" onChange={changeValueHandler} value={age}>
-        <option className="age-select__option" value={Ages.All} selected>
+        <option className="age-select__option" value={Ages.All}>
           all
         </option>
         <option className="age-select__option" value={Ages.Three}>
