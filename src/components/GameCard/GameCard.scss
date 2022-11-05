@@ -95,10 +95,3 @@
   border-bottom: 1px solid black;
   background-color: #181818;
 }
-
-.game-card:hover .game-card__front {
-  transform: rotateY(180deg);
-}
-.game-card:hover .game-card__back {
-  transform: rotateY(360deg);
-}
