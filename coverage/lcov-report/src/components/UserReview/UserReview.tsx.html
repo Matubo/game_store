@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/18</span>
+                <span class='fraction'>12/21</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">42.85% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>3/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.7% </span>
+                <span class="strong">55% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/17</span>
+                <span class='fraction'>11/20</span>
             </div>
         
             
@@ -135,7 +135,20 @@
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
 <a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -172,11 +185,24 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -244,6 +270,13 @@ export default function UserReview({ reviews }: IProps) {
 <span class="cstat-no" title="statement not covered" >    currentSlideNum + 1 &lt; reviews.length ? setSlideNum(currentSlideNum + 1) : setSlideNum(0);</span>
   }
 &nbsp;
+  function <span class="fstat-no" title="function not covered" >nextSlideHandlerByKeyboard(</span>e: React.KeyboardEvent) {
+<span class="cstat-no" title="statement not covered" >    e.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >    if (e.key == 'Enter') {</span>
+<span class="cstat-no" title="statement not covered" >      nextSlideHandler();</span>
+    }
+  }
+&nbsp;
   return (
     &lt;div className="reviews" ref={cardListRef}&gt;
       {reviews.map(<span class="fstat-no" title="function not covered" >(r</span>eview, index) =&gt; {
@@ -256,9 +289,6 @@ export default function UserReview({ reviews }: IProps) {
             }
             key={id}
           &gt;
-            &lt;div onClick={nextSlideHandler} className="reviews-card__next-button" tabIndex={0}&gt;
-              &lt;p&gt;{'&gt;'}&lt;/p&gt;
-            &lt;/div&gt;
             &lt;div className="reviews-card__reviews-flex"&gt;
               &lt;div className="reviews-card__raiting"&gt;{rating}/5&amp;#9733;&lt;/div&gt;
               &lt;img className="reviews-card__img" src={image} alt={alt}&gt;&lt;/img&gt;
@@ -273,6 +303,15 @@ export default function UserReview({ reviews }: IProps) {
               &lt;/div&gt;
             &lt;/div&gt;
             &lt;p className="reviews-card__description"&gt;{description}&lt;/p&gt;
+            &lt;button
+              onClick={nextSlideHandler}
+              onKeyPress={nextSlideHandlerByKeyboard}
+              className="reviews-card__next-button"
+              tabIndex={0}
+              disabled={currentSlideNum == index ? false : true}
+            &gt;
+              &lt;p&gt;{'&gt;'}&lt;/p&gt;
+            &lt;/button&gt;
           &lt;/div&gt;
         );
       })}
@@ -286,7 +325,7 @@ export default function UserReview({ reviews }: IProps) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-03T09:06:12.738Z
+                at 2022-11-05T16:28:13.280Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

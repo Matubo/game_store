@@ -21,17 +21,26 @@ export default function HeaderDropdownListElem({ text, elements }: IProps) {
       onMouseOver={() => setActive(true)}
       onFocus={() => setActive(true)}
       onMouseOut={() => setActive(false)}
-      onBlur={() => {
-        setActive(false);
-      }}
+      onBlur={() => undefined}
+      tabIndex={0}
     >
       <p className="dropdown-item__link">{text}</p>
       {active ? (
         <div className="dropdown-item__menu dropdown-menu">
-          {elements.map((elem) => {
+          {elements.map((elem, index) => {
             const { link, iconSrc, text } = elem;
             return (
-              <div className="dropdown-menu__item" key={text}>
+              <div
+                className="dropdown-menu__item"
+                key={text}
+                onBlur={
+                  index == elements.length - 1
+                    ? () => {
+                        setActive(false);
+                      }
+                    : () => undefined
+                }
+              >
                 <Link to={link} key={link} className="dropdown-menu__link">
                   <img src={iconSrc} className="dropdown-menu__icon" alt=""></img>
                   <p className="dropdown-menu__text">{text}</p>

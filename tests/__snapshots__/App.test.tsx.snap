@@ -38,6 +38,7 @@ exports[`App test snapshot test 1`] = `
         </a>
         <div
           class="navbar-header__item dropdown-item"
+          tabindex="0"
         >
           <p
             class="dropdown-item__link"

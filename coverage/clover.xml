@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1667466372822" clover="3.2.0">
-  <project timestamp="1667466372822" name="All files">
-    <metrics statements="304" coveredstatements="72" conditionals="59" coveredconditionals="3" methods="145" coveredmethods="24" elements="508" coveredelements="99" complexity="0" loc="304" ncloc="304" packages="25" files="43" classes="43"/>
+<coverage generated="1667665693329" clover="3.2.0">
+  <project timestamp="1667665693329" name="All files">
+    <metrics statements="325" coveredstatements="76" conditionals="67" coveredconditionals="3" methods="153" coveredmethods="24" elements="545" coveredelements="103" complexity="0" loc="325" ncloc="325" packages="25" files="43" classes="43"/>
     <package name="src">
       <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="App.tsx" path="E:\Прога\JOPA\game_store\src\App.tsx">
+      <file name="App.tsx" path="G:\Прога\github\game_store\src\App.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="11" count="1" type="stmt"/>
       </file>
-      <file name="index.tsx" path="E:\Прога\JOPA\game_store\src\index.tsx">
+      <file name="index.tsx" path="G:\Прога\github\game_store\src\index.tsx">
         <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
@@ -16,7 +16,7 @@
     </package>
     <package name="src.components.EditableField">
       <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="EditableField.tsx" path="E:\Прога\JOPA\game_store\src\components\EditableField\EditableField.tsx">
+      <file name="EditableField.tsx" path="G:\Прога\github\game_store\src\components\EditableField\EditableField.tsx">
         <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="11" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
@@ -27,78 +27,96 @@
     </package>
     <package name="src.components.Footer">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="Footer.tsx" path="E:\Прога\JOPA\game_store\src\components\Footer\Footer.tsx">
+      <file name="Footer.tsx" path="G:\Прога\github\game_store\src\components\Footer\Footer.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="4" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.GameCard">
-      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
-      <file name="GameCard.tsx" path="E:\Прога\JOPA\game_store\src\components\GameCard\GameCard.tsx">
-        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="11" count="4" type="stmt"/>
+      <metrics statements="15" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="2"/>
+      <file name="GameCard.tsx" path="G:\Прога\github\game_store\src\components\GameCard\GameCard.tsx">
+        <metrics statements="15" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="2"/>
+        <line num="12" count="4" type="stmt"/>
         <line num="13" count="4" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="33" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Header">
-      <metrics statements="12" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="9" coveredmethods="4"/>
-      <file name="Header.tsx" path="E:\Прога\JOPA\game_store\src\components\Header\Header.tsx">
+      <metrics statements="14" coveredstatements="6" conditionals="4" coveredconditionals="1" methods="11" coveredmethods="4"/>
+      <file name="Header.tsx" path="G:\Прога\github\game_store\src\components\Header\Header.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="12" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
-      <file name="HeaderCartElem.tsx" path="E:\Прога\JOPA\game_store\src\components\Header\HeaderCartElem.tsx">
+      <file name="HeaderCartElem.tsx" path="G:\Прога\github\game_store\src\components\Header\HeaderCartElem.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="10" count="2" type="stmt"/>
       </file>
-      <file name="HeaderDropdownListElem.tsx" path="E:\Прога\JOPA\game_store\src\components\Header\HeaderDropdownListElem.tsx">
-        <metrics statements="8" coveredstatements="2" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="1"/>
+      <file name="HeaderDropdownListElem.tsx" path="G:\Прога\github\game_store\src\components\Header\HeaderDropdownListElem.tsx">
+        <metrics statements="10" coveredstatements="2" conditionals="4" coveredconditionals="1" methods="8" coveredmethods="1"/>
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
       </file>
-      <file name="HeaderListElem.tsx" path="E:\Прога\JOPA\game_store\src\components\Header\HeaderListElem.tsx">
+      <file name="HeaderListElem.tsx" path="G:\Прога\github\game_store\src\components\Header\HeaderListElem.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="10" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.LoginForm">
-      <metrics statements="16" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="7" coveredmethods="0"/>
-      <file name="LoginForm.tsx" path="E:\Прога\JOPA\game_store\src\components\LoginForm\LoginForm.tsx">
-        <metrics statements="16" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="7" coveredmethods="0"/>
-        <line num="12" count="0" type="stmt"/>
+      <metrics statements="22" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="10" coveredmethods="0"/>
+      <file name="LoginForm.tsx" path="G:\Прога\github\game_store\src\components\LoginForm\LoginForm.tsx">
+        <metrics statements="22" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="10" coveredmethods="0"/>
         <line num="13" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="20" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.OrdersList">
       <metrics statements="21" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="12" coveredmethods="0"/>
-      <file name="OrderListElem.tsx" path="E:\Прога\JOPA\game_store\src\components\OrdersList\OrderListElem.tsx">
+      <file name="OrderListElem.tsx" path="G:\Прога\github\game_store\src\components\OrdersList\OrderListElem.tsx">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="5" count="0" type="stmt"/>
       </file>
-      <file name="OrdersList.tsx" path="E:\Прога\JOPA\game_store\src\components\OrdersList\OrdersList.tsx">
+      <file name="OrdersList.tsx" path="G:\Прога\github\game_store\src\components\OrdersList\OrdersList.tsx">
         <metrics statements="20" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="11" coveredmethods="0"/>
         <line num="14" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
@@ -124,7 +142,7 @@
     </package>
     <package name="src.components.SerachResult">
       <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-      <file name="SearchResult.tsx" path="E:\Прога\JOPA\game_store\src\components\SerachResult\SearchResult.tsx">
+      <file name="SearchResult.tsx" path="G:\Прога\github\game_store\src\components\SerachResult\SearchResult.tsx">
         <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="11" count="1" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
@@ -132,7 +150,7 @@
     </package>
     <package name="src.components.UserInformation">
       <metrics statements="24" coveredstatements="0" conditionals="17" coveredconditionals="0" methods="7" coveredmethods="0"/>
-      <file name="UserInformation.tsx" path="E:\Прога\JOPA\game_store\src\components\UserInformation\UserInformation.tsx">
+      <file name="UserInformation.tsx" path="G:\Прога\github\game_store\src\components\UserInformation\UserInformation.tsx">
         <metrics statements="24" coveredstatements="0" conditionals="17" coveredconditionals="0" methods="7" coveredmethods="0"/>
         <line num="13" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
@@ -161,13 +179,13 @@
       </file>
     </package>
     <package name="src.components.UserReview">
-      <metrics statements="18" coveredstatements="11" conditionals="8" coveredconditionals="0" methods="7" coveredmethods="3"/>
-      <file name="PlatformSupport.tsx" path="E:\Прога\JOPA\game_store\src\components\UserReview\PlatformSupport.tsx">
+      <metrics statements="21" coveredstatements="11" conditionals="12" coveredconditionals="0" methods="8" coveredmethods="3"/>
+      <file name="PlatformSupport.tsx" path="G:\Прога\github\game_store\src\components\UserReview\PlatformSupport.tsx">
         <metrics statements="1" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
       </file>
-      <file name="UserReview.tsx" path="E:\Прога\JOPA\game_store\src\components\UserReview\UserReview.tsx">
-        <metrics statements="17" coveredstatements="11" conditionals="6" coveredconditionals="0" methods="6" coveredmethods="3"/>
+      <file name="UserReview.tsx" path="G:\Прога\github\game_store\src\components\UserReview\UserReview.tsx">
+        <metrics statements="20" coveredstatements="11" conditionals="10" coveredconditionals="0" methods="7" coveredmethods="3"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
@@ -182,24 +200,27 @@
         <line num="29" count="1" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
         <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.consts">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-      <file name="APIURL.tsx" path="E:\Прога\JOPA\game_store\src\consts\APIURL.tsx">
+      <file name="APIURL.tsx" path="G:\Прога\github\game_store\src\consts\APIURL.tsx">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
-      <file name="categories.tsx" path="E:\Прога\JOPA\game_store\src\consts\categories.tsx">
+      <file name="categories.tsx" path="G:\Прога\github\game_store\src\consts\categories.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="11" count="1" type="stmt"/>
       </file>
-      <file name="filterForm.ts" path="E:\Прога\JOPA\game_store\src\consts\filterForm.ts">
+      <file name="filterForm.ts" path="G:\Прога\github\game_store\src\consts\filterForm.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
-      <file name="routes.tsx" path="E:\Прога\JOPA\game_store\src\consts\routes.tsx">
+      <file name="routes.tsx" path="G:\Прога\github\game_store\src\consts\routes.tsx">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
@@ -208,20 +229,20 @@
         <line num="9" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
       </file>
-      <file name="routesURL.tsx" path="E:\Прога\JOPA\game_store\src\consts\routesURL.tsx">
+      <file name="routesURL.tsx" path="G:\Прога\github\game_store\src\consts\routesURL.tsx">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
     <package name="src.forms.FilterForm">
       <metrics statements="31" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="16" coveredmethods="0"/>
-      <file name="AgeForm.tsx" path="E:\Прога\JOPA\game_store\src\forms\FilterForm\AgeForm.tsx">
+      <file name="AgeForm.tsx" path="G:\Прога\github\game_store\src\forms\FilterForm\AgeForm.tsx">
         <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="10" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
       </file>
-      <file name="FilterForm.tsx" path="E:\Прога\JOPA\game_store\src\forms\FilterForm\FilterForm.tsx">
+      <file name="FilterForm.tsx" path="G:\Прога\github\game_store\src\forms\FilterForm\FilterForm.tsx">
         <metrics statements="14" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="0"/>
         <line num="15" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
@@ -238,14 +259,14 @@
         <line num="40" count="0" type="stmt"/>
         <line num="48" count="0" type="stmt"/>
       </file>
-      <file name="GenresForm.tsx" path="E:\Прога\JOPA\game_store\src\forms\FilterForm\GenresForm.tsx">
+      <file name="GenresForm.tsx" path="G:\Прога\github\game_store\src\forms\FilterForm\GenresForm.tsx">
         <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="11" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
       </file>
-      <file name="NameForm.tsx" path="E:\Прога\JOPA\game_store\src\forms\FilterForm\NameForm.tsx">
+      <file name="NameForm.tsx" path="G:\Прога\github\game_store\src\forms\FilterForm\NameForm.tsx">
         <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="9" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
@@ -253,7 +274,7 @@
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
       </file>
-      <file name="RatingForm.tsx" path="E:\Прога\JOPA\game_store\src\forms\FilterForm\RatingForm.tsx">
+      <file name="RatingForm.tsx" path="G:\Прога\github\game_store\src\forms\FilterForm\RatingForm.tsx">
         <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="10" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
@@ -263,7 +284,7 @@
     </package>
     <package name="src.handlers">
       <metrics statements="4" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="imgErrorHandler.ts" path="E:\Прога\JOPA\game_store\src\handlers\imgErrorHandler.ts">
+      <file name="imgErrorHandler.ts" path="G:\Прога\github\game_store\src\handlers\imgErrorHandler.ts">
         <metrics statements="4" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
@@ -273,7 +294,7 @@
     </package>
     <package name="src.hooks">
       <metrics statements="8" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
-      <file name="useDebounce.tsx" path="E:\Прога\JOPA\game_store\src\hooks\useDebounce.tsx">
+      <file name="useDebounce.tsx" path="G:\Прога\github\game_store\src\hooks\useDebounce.tsx">
         <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="6" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
@@ -282,18 +303,18 @@
         <line num="14" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
       </file>
-      <file name="useTypedDispatch.ts" path="E:\Прога\JOPA\game_store\src\hooks\useTypedDispatch.ts">
+      <file name="useTypedDispatch.ts" path="G:\Прога\github\game_store\src\hooks\useTypedDispatch.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="4" count="2" type="stmt"/>
       </file>
-      <file name="useTypedSelector.ts" path="E:\Прога\JOPA\game_store\src\hooks\useTypedSelector.ts">
+      <file name="useTypedSelector.ts" path="G:\Прога\github\game_store\src\hooks\useTypedSelector.ts">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="4" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.pages.CartPage">
       <metrics statements="22" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="11" coveredmethods="0"/>
-      <file name="CartPage.tsx" path="E:\Прога\JOPA\game_store\src\pages\CartPage\CartPage.tsx">
+      <file name="CartPage.tsx" path="G:\Прога\github\game_store\src\pages\CartPage\CartPage.tsx">
         <metrics statements="22" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="11" coveredmethods="0"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
@@ -321,14 +342,14 @@
     </package>
     <package name="src.pages.ErrorPage">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="ErrorPage.tsx" path="E:\Прога\JOPA\game_store\src\pages\ErrorPage\ErrorPage.tsx">
+      <file name="ErrorPage.tsx" path="G:\Прога\github\game_store\src\pages\ErrorPage\ErrorPage.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="4" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.pages.HomePage">
       <metrics statements="14" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="3"/>
-      <file name="HomePage.tsx" path="E:\Прога\JOPA\game_store\src\pages\HomePage\HomePage.tsx">
+      <file name="HomePage.tsx" path="G:\Прога\github\game_store\src\pages\HomePage\HomePage.tsx">
         <metrics statements="14" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="3"/>
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
@@ -348,7 +369,7 @@
     </package>
     <package name="src.pages.MineTemplate">
       <metrics statements="13" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="2"/>
-      <file name="MineTemplate.tsx" path="E:\Прога\JOPA\game_store\src\pages\MineTemplate\MineTemplate.tsx">
+      <file name="MineTemplate.tsx" path="G:\Прога\github\game_store\src\pages\MineTemplate\MineTemplate.tsx">
         <metrics statements="13" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="2"/>
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
@@ -367,7 +388,7 @@
     </package>
     <package name="src.pages.ProductsPage">
       <metrics statements="21" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="0"/>
-      <file name="ProguctsPage.tsx" path="E:\Прога\JOPA\game_store\src\pages\ProductsPage\ProguctsPage.tsx">
+      <file name="ProguctsPage.tsx" path="G:\Прога\github\game_store\src\pages\ProductsPage\ProguctsPage.tsx">
         <metrics statements="21" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="0"/>
         <line num="15" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
@@ -394,7 +415,7 @@
     </package>
     <package name="src.pages.UserPage">
       <metrics statements="21" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="12" coveredmethods="0"/>
-      <file name="UserPage.tsx" path="E:\Прога\JOPA\game_store\src\pages\UserPage\UserPage.tsx">
+      <file name="UserPage.tsx" path="G:\Прога\github\game_store\src\pages\UserPage\UserPage.tsx">
         <metrics statements="21" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="12" coveredmethods="0"/>
         <line num="15" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
@@ -421,7 +442,7 @@
     </package>
     <package name="src.redux">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="store.ts" path="E:\Прога\JOPA\game_store\src\redux\store.ts">
+      <file name="store.ts" path="G:\Прога\github\game_store\src\redux\store.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
@@ -430,7 +451,7 @@
     </package>
     <package name="src.redux.reducers">
       <metrics statements="34" coveredstatements="11" conditionals="6" coveredconditionals="0" methods="14" coveredmethods="1"/>
-      <file name="cartReducer.ts" path="E:\Прога\JOPA\game_store\src\redux\reducers\cartReducer.ts">
+      <file name="cartReducer.ts" path="G:\Прога\github\game_store\src\redux\reducers\cartReducer.ts">
         <metrics statements="21" coveredstatements="4" conditionals="6" coveredconditionals="0" methods="8" coveredmethods="0"/>
         <line num="6" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
@@ -454,7 +475,7 @@
         <line num="46" count="0" type="stmt"/>
         <line num="50" count="1" type="stmt"/>
       </file>
-      <file name="userReducer.ts" path="E:\Прога\JOPA\game_store\src\redux\reducers\userReducer.ts">
+      <file name="userReducer.ts" path="G:\Прога\github\game_store\src\redux\reducers\userReducer.ts">
         <metrics statements="13" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="1"/>
         <line num="6" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
@@ -473,7 +494,7 @@
     </package>
     <package name="src.redux.reducers.handlers">
       <metrics statements="12" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-      <file name="getTotalHandler.ts" path="E:\Прога\JOPA\game_store\src\redux\reducers\handlers\getTotalHandler.ts">
+      <file name="getTotalHandler.ts" path="G:\Прога\github\game_store\src\redux\reducers\handlers\getTotalHandler.ts">
         <metrics statements="9" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
@@ -485,7 +506,7 @@
         <line num="14" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
       </file>
-      <file name="removeFromCartHandler.ts" path="E:\Прога\JOPA\game_store\src\redux\reducers\handlers\removeFromCartHandler.ts">
+      <file name="removeFromCartHandler.ts" path="G:\Прога\github\game_store\src\redux\reducers\handlers\removeFromCartHandler.ts">
         <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
@@ -494,7 +515,7 @@
     </package>
     <package name="src.router">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="AppRouter.tsx" path="E:\Прога\JOPA\game_store\src\router\AppRouter.tsx">
+      <file name="AppRouter.tsx" path="G:\Прога\github\game_store\src\router\AppRouter.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="5" count="1" type="stmt"/>
         <line num="8" count="5" type="stmt"/>
@@ -502,7 +523,7 @@
     </package>
     <package name="src.services">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
-      <file name="auth.service.ts" path="E:\Прога\JOPA\game_store\src\services\auth.service.ts">
+      <file name="auth.service.ts" path="G:\Прога\github\game_store\src\services\auth.service.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
