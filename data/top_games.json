@@ -8,7 +8,7 @@
     "discount":5,
     "genre": "Shooter",
     "platform": { "pc": true, "playstation": true, "xbox": true },
-    "image": "",
+    "image": "https://upload.wikimedia.org/wikipedia/ru/3/33/Overwatch_Origins_Edition_PC_cover.jpg",
     "description": "Overwatch is a colorful team-based action game starring a diverse cast of powerful heroes. Travel the world, build a team, and contest objectives in exhilarating 6v6 combat.",
     "alt": "Overwatch"
   },
